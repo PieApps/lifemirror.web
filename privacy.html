@@ -1,177 +1,185 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | LifeMirror</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        background: '#0a0a0f',
+                        surface: 'rgba(255, 255, 255, 0.03)',
+                        surfaceBorder: 'rgba(255, 255, 255, 0.08)',
+                        accent: {
+                            light: '#a78bfa',
+                            DEFAULT: '#8b5cf6',
+                            dark: '#6d28d9',
+                        },
+                        secondary: {
+                            DEFAULT: '#3b82f6',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite alternate',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '100%': { transform: 'translate(30px, 50px) scale(1.1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .page-content {
-            padding-top: 8rem;
-            padding-bottom: 4rem;
+        body {
+            background-color: #0a0a0f;
+            color: #f8fafc;
         }
         
-        .document-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 3rem;
-        }
-        
-        .document-container h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-        
-        .document-container h2 {
-            font-size: 1.75rem;
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-            color: var(--accent-primary);
-        }
-        
-        .document-container h3 {
-            font-size: 1.25rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        
-        .document-container p {
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-        }
-        
-        .document-container ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-            color: var(--text-secondary);
-        }
-        
-        .document-container li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .last-updated {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 3rem;
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="blob blob-1"></div>
-    
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">
-                <span class="logo-icon">✨</span>
-                LifeMirror
+<body class="antialiased selection:bg-accent selection:text-white">
+
+    <!-- Background Effects -->
+    <div class="fixed top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accent/20 blur-[120px] animate-blob -z-10 mix-blend-screen pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10 py-3">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="font-display font-bold text-xl tracking-tight flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="text-accent text-2xl">✧</span> LifeMirror
             </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Return Home</a>
             </div>
-            <a href="index.html#download" class="btn btn-primary nav-cta">Get the App</a>
         </div>
     </nav>
 
-    <main class="page-content">
-        <div class="container">
-            <div class="document-container glass-panel">
-                <h1>Privacy Policy for LifeMirror</h1>
-                <p class="last-updated"><strong>Last Updated:</strong> May 13, 2026</p>
+    <!-- Main Content -->
+    <main class="pt-32 pb-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass-panel p-8 md:p-12 rounded-3xl">
+                <h1 class="font-display text-3xl md:text-5xl font-bold mb-4">Privacy Policy for LifeMirror</h1>
+                <p class="text-slate-400 text-sm mb-12"><strong>Last Updated:</strong> May 13, 2026</p>
 
-                <h2>1. Introduction</h2>
-                <p>PieApps ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the LifeMirror mobile application (the "App").</p>
-                <p>By accessing or using the App, you agree to the terms of this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not access the application.</p>
+                <div class="space-y-10">
+                    <section>
+                        <h2 class="text-2xl font-bold text-accent mb-4">1. Introduction</h2>
+                        <p class="text-slate-300 leading-relaxed mb-4">PieApps ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the LifeMirror mobile application (the "App").</p>
+                        <p class="text-slate-300 leading-relaxed">By accessing or using the App, you agree to the terms of this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not access the application.</p>
+                    </section>
 
-                <h2>2. Information We Collect</h2>
-                <p>We may collect information about you in a variety of ways. The information we may collect via the App includes:</p>
+                    <section>
+                        <h2 class="text-2xl font-bold text-accent mb-4">2. Information We Collect</h2>
+                        <p class="text-slate-300 leading-relaxed mb-6">We may collect information about you in a variety of ways. The information we may collect via the App includes:</p>
 
-                <h3>A. Personal Data</h3>
-                <p>When you create an account, we may collect personally identifiable information, such as:</p>
-                <ul>
-                    <li>Email address</li>
-                    <li>Authentication details (e.g., passwords, managed securely via Firebase Authentication)</li>
-                    <li>Profile information</li>
-                </ul>
+                        <h3 class="text-xl font-semibold mb-3">A. Personal Data</h3>
+                        <p class="text-slate-300 leading-relaxed mb-3">When you create an account, we may collect personally identifiable information, such as:</p>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-300 mb-6">
+                            <li>Email address</li>
+                            <li>Authentication details (e.g., passwords, managed securely via Firebase Authentication)</li>
+                            <li>Profile information</li>
+                        </ul>
 
-                <h3>B. Device and Usage Data</h3>
-                <p>To provide core functionality, the App requests specific device permissions. We collect and process the following data:</p>
-                <ul>
-                    <li><strong>App Usage Data (PACKAGE_USAGE_STATS):</strong> To provide the Automatic App Tracking feature, LifeMirror requires Usage Access permission. When this feature is enabled, LifeMirror detects which application is currently active on your screen to automatically manage your activity timers. This usage data is processed locally on your device. We do not transmit your app usage history to our servers or share it with any third parties. If you enable Cloud Backup, your aggregated session data (which may include the names of apps you have tracked) is securely synced to your account.</li>
-                    <li><strong>Physical Activity Data (ACTIVITY_RECOGNITION):</strong> We use device sensors to automatically detect physical activities (like walking or sitting) to trigger context-aware rhythms.</li>
-                    <li><strong>Phone State Data (READ_PHONE_STATE):</strong> To provide the Automatic Call Tracking feature, LifeMirror requires permission to access the phone state. This allows the app to detect when a phone call begins and ends so it can automatically track the duration of your calls. LifeMirror does not collect, access, store, or transmit any phone numbers, call logs, or the content of your conversations.</li>
-                    <li><strong>Analytics and Crash Logs:</strong> We collect anonymized usage data and crash reports to improve the App's stability and performance.</li>
-                </ul>
+                        <h3 class="text-xl font-semibold mb-3">B. Device and Usage Data</h3>
+                        <p class="text-slate-300 leading-relaxed mb-3">To provide core functionality, the App requests specific device permissions. We collect and process the following data:</p>
+                        <ul class="list-disc pl-6 space-y-4 text-slate-300 mb-6">
+                            <li><strong>App Usage Data (PACKAGE_USAGE_STATS):</strong> To provide the Automatic App Tracking feature, LifeMirror requires Usage Access permission. When this feature is enabled, LifeMirror detects which application is currently active on your screen to automatically manage your activity timers. This usage data is processed locally on your device. We do not transmit your app usage history to our servers or share it with any third parties. If you enable Cloud Backup, your aggregated session data (which may include the names of apps you have tracked) is securely synced to your account.</li>
+                            <li><strong>Physical Activity Data (ACTIVITY_RECOGNITION):</strong> We use device sensors to automatically detect physical activities (like walking or sitting) to trigger context-aware rhythms.</li>
+                            <li><strong>Phone State Data (READ_PHONE_STATE):</strong> To provide the Automatic Call Tracking feature, LifeMirror requires permission to access the phone state. This allows the app to detect when a phone call begins and ends so it can automatically track the duration of your calls. LifeMirror does not collect, access, store, or transmit any phone numbers, call logs, or the content of your conversations.</li>
+                            <li><strong>Analytics and Crash Logs:</strong> We collect anonymized usage data and crash reports to improve the App's stability and performance.</li>
+                        </ul>
 
-                <h3>C. User-Generated Content</h3>
-                <ul>
-                    <li>Timers, subtag tracking, and rhythm data you create are stored locally on your device and securely synchronized to the cloud (if you are signed into an account) for backup and cross-device functionality.</li>
-                </ul>
+                        <h3 class="text-xl font-semibold mb-3">C. User-Generated Content</h3>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-300">
+                            <li>Timers, subtag tracking, and rhythm data you create are stored locally on your device and securely synchronized to the cloud (if you are signed into an account) for backup and cross-device functionality.</li>
+                        </ul>
+                    </section>
 
-                <h2>3. How We Use Your Information</h2>
-                <p>We use the information we collect to:</p>
-                <ul>
-                    <li>Provide, operate, and maintain the App.</li>
-                    <li>Enable core automation features (like triggering a rhythm based on app usage or physical activity).</li>
-                    <li>Manage your account, cloud backups, and subscriptions.</li>
-                    <li>Improve our application, develop new features, and analyze user behavior.</li>
-                    <li>Send you technical notices, updates, and support messages.</li>
-                </ul>
+                    <section>
+                        <h2 class="text-2xl font-bold text-accent mb-4">3. How We Use Your Information</h2>
+                        <p class="text-slate-300 leading-relaxed mb-3">We use the information we collect to:</p>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-300">
+                            <li>Provide, operate, and maintain the App.</li>
+                            <li>Enable core automation features (like triggering a rhythm based on app usage or physical activity).</li>
+                            <li>Manage your account, cloud backups, and subscriptions.</li>
+                            <li>Improve our application, develop new features, and analyze user behavior.</li>
+                            <li>Send you technical notices, updates, and support messages.</li>
+                        </ul>
+                    </section>
 
-                <h2>4. Disclosure of Your Information</h2>
-                <p>We do not sell, trade, or rent your personal identification information to others. We may share information in the following situations:</p>
-                <ul>
-                    <li><strong>Service Providers:</strong> We may share your information with third-party vendors, service providers, contractors, or agents who perform services for us or on our behalf (e.g., Firebase for cloud synchronization, database storage, and authentication; Google Play Billing for subscriptions).</li>
-                    <li><strong>Legal Obligations:</strong> We may disclose your information where required to do so by law or subpoena, or if we reasonably believe that such action is necessary to comply with the law.</li>
-                </ul>
+                    <section>
+                        <h2 class="text-2xl font-bold text-accent mb-4">4. Disclosure of Your Information</h2>
+                        <p class="text-slate-300 leading-relaxed mb-3">We do not sell, trade, or rent your personal identification information to others. We may share information in the following situations:</p>
+                        <ul class="list-disc pl-6 space-y-4 text-slate-300">
+                            <li><strong>Service Providers:</strong> We may share your information with third-party vendors, service providers, contractors, or agents who perform services for us or on our behalf (e.g., Firebase for cloud synchronization, database storage, and authentication; Google Play Billing for subscriptions).</li>
+                            <li><strong>Legal Obligations:</strong> We may disclose your information where required to do so by law or subpoena, or if we reasonably believe that such action is necessary to comply with the law.</li>
+                        </ul>
+                    </section>
 
-                <h2>5. Security of Your Information</h2>
-                <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
+                    <section>
+                        <h2 class="text-2xl font-bold text-accent mb-4">5. Security of Your Information</h2>
+                        <p class="text-slate-300 leading-relaxed">We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
+                    </section>
 
-                <h2>6. Data Retention and Deletion</h2>
-                <p>We retain your personal data only for as long as is necessary for the purposes set out in this Privacy Policy. You can request to delete your account and associated cloud data at any time from within the App settings. Once deleted, your personal data will be permanently removed from our active databases.</p>
+                    <section>
+                        <h2 class="text-2xl font-bold text-accent mb-4">6. Data Retention and Deletion</h2>
+                        <p class="text-slate-300 leading-relaxed">We retain your personal data only for as long as is necessary for the purposes set out in this Privacy Policy. You can request to delete your account and associated cloud data at any time from within the App settings. Once deleted, your personal data will be permanently removed from our active databases.</p>
+                    </section>
 
-                <h2>7. Children's Privacy</h2>
-                <p>The App does not knowingly collect or solicit personal information from children under the age of 13. If we learn we have collected personal information from a child under 13, we will delete that information as quickly as possible.</p>
+                    <section>
+                        <h2 class="text-2xl font-bold text-accent mb-4">7. Children's Privacy</h2>
+                        <p class="text-slate-300 leading-relaxed">The App does not knowingly collect or solicit personal information from children under the age of 13. If we learn we have collected personal information from a child under 13, we will delete that information as quickly as possible.</p>
+                    </section>
 
-                <h2>8. Changes to This Privacy Policy</h2>
-                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top. You are advised to review this Privacy Policy periodically for any changes.</p>
+                    <section>
+                        <h2 class="text-2xl font-bold text-accent mb-4">8. Changes to This Privacy Policy</h2>
+                        <p class="text-slate-300 leading-relaxed">We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top. You are advised to review this Privacy Policy periodically for any changes.</p>
+                    </section>
 
-                <h2>9. Contact Us</h2>
-                <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
-                <p>
-                    <strong>Email:</strong> support@lifemirror.app<br>
-                    <strong>Developer:</strong> PieApps
-                </p>
+                    <section>
+                        <h2 class="text-2xl font-bold text-accent mb-4">9. Contact Us</h2>
+                        <p class="text-slate-300 leading-relaxed mb-2">If you have questions or comments about this Privacy Policy, please contact us at:</p>
+                        <p class="text-slate-300 leading-relaxed">
+                            <strong class="text-white">Email:</strong> support@lifemirror.app<br>
+                            <strong class="text-white">Developer:</strong> PieApps
+                        </p>
+                    </section>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon">✨</span>
-                    LifeMirror
-                </a>
-            </div>
-            <div class="footer-links">
-                <div class="link-group">
-                    <h4>Legal</h4>
-                    <a href="privacy.html">Privacy Policy</a>
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-background pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 PieApps. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="index.html" class="hover:text-white">Home</a>
+                    <a href="privacy.html" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
                 </div>
             </div>
         </div>
-        <div class="container footer-bottom">
-            <p>&copy; 2026 PieApps. All rights reserved.</p>
-        </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
