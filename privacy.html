@@ -63,11 +63,20 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10 py-3">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="font-display font-bold text-xl tracking-tight flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <span class="text-accent text-2xl">✧</span> LifeMirror
+            <a href="index.html" class="font-display font-bold text-xl tracking-tight flex items-center gap-2">
+                <img src="images/logo.png" alt="LifeMirror Logo" class="h-8 w-8">
+                LifeMirror
             </a>
+            <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-300">
+                <a href="index.html#how-it-works" class="hover:text-white transition-colors">How It Works</a>
+                <a href="index.html#daily" class="hover:text-white transition-colors">Daily Experience</a>
+                <a href="index.html#features" class="hover:text-white transition-colors">Features</a>
+                <a href="index.html#demo" class="hover:text-white transition-colors">Demo</a>
+                <a href="index.html#pricing" class="hover:text-white transition-colors">Pricing</a>
+            </div>
             <div class="flex items-center gap-4">
-                <a href="index.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Return Home</a>
+                <a href="index.html#download" class="hidden md:block text-sm font-medium text-slate-300 hover:text-white">Log in</a>
+                <a href="index.html#download" class="glass-panel px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/10 transition-colors">Get Early Access</a>
             </div>
         </div>
     </nav>
@@ -158,7 +167,7 @@
                         <h2 class="text-2xl font-bold text-accent mb-4">9. Contact Us</h2>
                         <p class="text-slate-300 leading-relaxed mb-2">If you have questions or comments about this Privacy Policy, please contact us at:</p>
                         <p class="text-slate-300 leading-relaxed">
-                            <strong class="text-white">Email:</strong> support@lifemirror.app<br>
+                            <strong class="text-white">Email:</strong> vrpieapps@gmail.com<br>
                             <strong class="text-white">Developer:</strong> PieApps
                         </p>
                     </section>
@@ -170,12 +179,51 @@
     <!-- Footer -->
     <footer class="border-t border-white/10 bg-background pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="index.html" class="font-display font-bold text-2xl tracking-tight flex items-center gap-2 mb-4">
+                        <img src="images/logo.png" alt="LifeMirror Logo" class="h-8 w-8">
+                        LifeMirror
+                    </a>
+                    <p class="text-slate-400 max-w-sm mb-6">A deeply thoughtful product for understanding yourself. Developed with intention by PieApps.</p>
+                    <div class="flex gap-4">
+                        <a href="index.html#download" class="border border-white/20 rounded-xl px-4 py-2 flex items-center gap-3 hover:bg-white/5 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414C17.523 15.3414 16.0336 18.0664 13.9165 20.3551C12.9818 21.3653 11.0185 21.3653 10.0838 20.3551C7.9667 18.0664 6.47728 15.3414 6.47728 15.3414C4.85191 12.3394 5.37894 8.52989 7.8427 6.06613C10.1343 3.77457 13.866 3.77457 16.1576 6.06613C18.6213 8.52989 19.1484 12.3394 17.523 15.3414Z" opacity="0.5"/><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"/></svg>
+                            <div>
+                                <div class="text-[10px] text-slate-400 uppercase tracking-wide">Available on</div>
+                                <div class="text-sm font-semibold">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Product</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li><a href="index.html#features" class="hover:text-accent transition-colors">Features</a></li>
+                        <li><a href="index.html#daily" class="hover:text-accent transition-colors">How it Works</a></li>
+                        <li><a href="index.html#pricing" class="hover:text-accent transition-colors">Pricing</a></li>
+                        <li><a href="index.html#demo" class="hover:text-accent transition-colors">Interactive Demo</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Company</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-accent transition-colors">About PieApps</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Contact Support</a></li>
+                        <li><a href="privacy.html" class="hover:text-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
                 <p>&copy; 2026 PieApps. All rights reserved.</p>
                 <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="index.html" class="hover:text-white">Home</a>
                     <a href="privacy.html" class="hover:text-white">Privacy</a>
                     <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Cookies</a>
                 </div>
             </div>
         </div>
