@@ -89,13 +89,12 @@
             <a href="#" class="font-display font-bold text-xl tracking-tight flex items-center gap-2">
                 <span class="text-accent text-2xl">✧</span> LifeMirror
             </a>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+            <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-300">
+                <a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a>
+                <a href="#daily" class="hover:text-white transition-colors">Daily Experience</a>
                 <a href="#features" class="hover:text-white transition-colors">Features</a>
-                <a href="#daily" class="hover:text-white transition-colors">How It Works</a>
-                <a href="#ai" class="hover:text-white transition-colors">AI Insights</a>
                 <a href="#demo" class="hover:text-white transition-colors">Demo</a>
                 <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
-                <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
             </div>
             <div class="flex items-center gap-4">
                 <a href="#download" class="hidden md:block text-sm font-medium text-slate-300 hover:text-white">Log in</a>
@@ -231,6 +230,81 @@
                 </div>
                 <!-- Faked UI behind video play button -->
                 <div class="absolute inset-0 opacity-40 mix-blend-screen bg-gradient-to-tr from-accent/20 to-transparent pointer-events-none"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 border-t border-white/5 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 gs-reveal">
+                <span class="text-accent font-semibold tracking-wider uppercase text-sm">Welcome to your personal Life Mirror.</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-2 mb-4">How it Works</h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6 mb-16">
+                <!-- Step 1 -->
+                <div class="glass-panel p-8 rounded-3xl gs-reveal">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="bg-accent/15 text-accent px-4 py-2 rounded-xl font-display font-bold">01</div>
+                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">1. Notice</h3>
+                    <p class="text-slate-400 leading-relaxed">Tap whenever you shift focus. Noticing is the first step.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass-panel p-8 rounded-3xl gs-reveal delay-100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="bg-accent/15 text-accent px-4 py-2 rounded-xl font-display font-bold">02</div>
+                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">2. Detail</h3>
+                    <p class="text-slate-400 leading-relaxed">Add sub-tags to your sessions for deeper clarity.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="glass-panel p-8 rounded-3xl gs-reveal delay-200">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="bg-accent/15 text-accent px-4 py-2 rounded-xl font-display font-bold">03</div>
+                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">3. Reflect</h3>
+                    <p class="text-slate-400 leading-relaxed">The AI mirrors your rhythm back to you in your daily story.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="glass-panel p-8 rounded-3xl gs-reveal delay-300">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="bg-accent/15 text-accent px-4 py-2 rounded-xl font-display font-bold">04</div>
+                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">4. Grow</h3>
+                    <p class="text-slate-400 leading-relaxed">Use insights to align your time with your true intentions.</p>
+                </div>
+            </div>
+
+            <!-- WHY Section -->
+            <div class="max-w-3xl mx-auto gs-reveal">
+                <div class="glass-panel p-10 rounded-3xl border-accent/30 bg-accent/5 shadow-[0_0_30px_rgba(139,92,246,0.1)]">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="bg-gradient-to-r from-accent to-secondary text-white px-5 py-2 rounded-xl font-display font-bold tracking-wider">WHY</div>
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-4">Why LifeMirror?</h3>
+                    <p class="text-lg text-slate-300 leading-relaxed">"Because how we spend our days is how we spend our lives."</p>
+                </div>
             </div>
         </div>
     </section>
