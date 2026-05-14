@@ -93,7 +93,7 @@
             </a>
             <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-300">
                 <a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a>
-                <a href="#daily" class="hover:text-white transition-colors">Daily Experience</a>
+                <a href="#use-cases" class="hover:text-white transition-colors">Use Cases</a>
                 <a href="#features" class="hover:text-white transition-colors">Features</a>
                 <a href="#demo" class="hover:text-white transition-colors">Demo</a>
                 <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
@@ -445,23 +445,62 @@ Automatically track routines, app usage, movement, and real-world context in the
         </div>
     </section>
 
-    <!-- How People Use Section -->
-    <section class="py-24 border-t border-white/5">
+    <!-- Use Cases Showcase -->
+    <section id="use-cases" class="py-24 border-t border-white/5 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 text-center">How people use LifeMirror</h2>
+            <div class="text-center mb-16 gs-reveal">
+                <span class="text-secondary font-semibold tracking-wider uppercase text-sm">Real-World Application</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-2 mb-4">Use Cases</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">See how LifeMirror adapts to different lifestyles, providing unique insights for every path.</p>
+            </div>
             
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass-panel p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 gs-reveal">
-                    <h4 class="text-accent mb-4 font-mono text-sm">THE FOUNDER</h4>
-                    <p class="text-lg mb-4">"I use it to monitor burnout. LifeMirror warns me when my late-night Slack usage correlates with poor focus the next day."</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Use Case 1: Working Professional -->
+                <div class="glass-panel p-8 rounded-[32px] hover:-translate-y-2 transition-all duration-500 gs-reveal group">
+                    <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">💼</div>
+                    <h3 class="font-display font-bold text-xl mb-2 text-white">Alex Chen</h3>
+                    <p class="text-accent-light text-xs font-mono mb-4 uppercase tracking-widest">Working Professional</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">"LifeMirror helps me maintain a 78% consistency rate. It tracks my deep work blocks and warns me when team dynamics start affecting my creative flow."</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-[10px] text-slate-500 uppercase"><span>Focus Mode</span><span>3.0h Target</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-1.5"><div class="bg-accent h-1.5 rounded-full w-[85%]"></div></div>
+                    </div>
                 </div>
-                <div class="glass-panel p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 gs-reveal delay-100">
-                    <h4 class="text-secondary mb-4 font-mono text-sm">THE CREATOR</h4>
-                    <p class="text-lg mb-4">"It's my automatic deep-work journal. I can see exactly how many uninterrupted hours I spent in Figma versus scrolling Twitter."</p>
+
+                <!-- Use Case 2: Startup Founder -->
+                <div class="glass-panel p-8 rounded-[32px] hover:-translate-y-2 transition-all duration-500 gs-reveal delay-100 group">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🚀</div>
+                    <h3 class="font-display font-bold text-xl mb-2 text-white">Marcus Thorne</h3>
+                    <p class="text-secondary text-xs font-mono mb-4 uppercase tracking-widest">Startup Founder</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">"In the chaos of a funding round, LifeMirror is my anchor. It detects burnout before I feel it, correlating late-night Slack sessions with next-day anxiety."</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-[10px] text-slate-500 uppercase"><span>Chaos Level</span><span>High</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-1.5"><div class="bg-secondary h-1.5 rounded-full w-[40%]"></div></div>
+                    </div>
                 </div>
-                <div class="glass-panel p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 gs-reveal delay-200">
-                    <h4 class="text-emerald-400 mb-4 font-mono text-sm">THE STUDENT</h4>
-                    <p class="text-lg mb-4">"It correlates my physical activity with my study habits. I realized a 20-minute walk boosts my focus span by over an hour."</p>
+
+                <!-- Use Case 3: Fitness Focused -->
+                <div class="glass-panel p-8 rounded-[32px] hover:-translate-y-2 transition-all duration-500 gs-reveal delay-200 group">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🏋️</div>
+                    <h3 class="font-display font-bold text-xl mb-2 text-white">Sarah Miller</h3>
+                    <p class="text-emerald-400 text-xs font-mono mb-4 uppercase tracking-widest">Fitness Focused</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">"88% tracking consistency. I use the 'Reflection' tool to see how my nutrition goals and sleep quality impact my peak performance during training."</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-[10px] text-slate-500 uppercase"><span>Peak Energy</span><span>95%</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-1.5"><div class="bg-emerald-400 h-1.5 rounded-full w-[95%]"></div></div>
+                    </div>
+                </div>
+
+                <!-- Use Case 4: Student -->
+                <div class="glass-panel p-8 rounded-[32px] hover:-translate-y-2 transition-all duration-500 gs-reveal delay-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🎓</div>
+                    <h3 class="font-display font-bold text-xl mb-2 text-white">Leo Garcia</h3>
+                    <p class="text-orange-400 text-xs font-mono mb-4 uppercase tracking-widest">Student</p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">"Exam stress is real. LifeMirror automatically maps my late-night study sessions and suggests recovery periods when it detects post-exam crashes."</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-[10px] text-slate-500 uppercase"><span>Study Depth</span><span>5.0h Deep</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-1.5"><div class="bg-orange-400 h-1.5 rounded-full w-[65%]"></div></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -599,7 +638,8 @@ Automatically track routines, app usage, movement, and real-world context in the
                     <h4 class="font-bold mb-4">Product</h4>
                     <ul class="space-y-3 text-slate-400 text-sm">
                         <li><a href="#features" class="hover:text-accent transition-colors">Features</a></li>
-                        <li><a href="#daily" class="hover:text-accent transition-colors">How it Works</a></li>
+                        <li><a href="#how-it-works" class="hover:text-accent transition-colors">How it Works</a></li>
+                        <li><a href="#use-cases" class="hover:text-accent transition-colors">Use Cases</a></li>
                         <li><a href="#pricing" class="hover:text-accent transition-colors">Pricing</a></li>
                         <li><a href="#demo" class="hover:text-accent transition-colors">Interactive Demo</a></li>
                     </ul>
