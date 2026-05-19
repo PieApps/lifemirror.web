@@ -4,76 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <title>LifeMirror | A New Era of Self-Awareness</title>
+    <title>LifeMirror | An AI mirror for your behavior</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        background: '#0a0a0f',
-                        surface: 'rgba(255, 255, 255, 0.03)',
-                        surfaceBorder: 'rgba(255, 255, 255, 0.08)',
-                        accent: {
-                            light: '#a78bfa',
-                            DEFAULT: '#8b5cf6',
-                            dark: '#6d28d9',
-                        },
-                        secondary: {
-                            DEFAULT: '#3b82f6',
-                        }
-                    },
-                    animation: {
-                        'blob': 'blob 10s infinite alternate',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '100%': { transform: 'translate(30px, 50px) scale(1.1)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #0a0a0f;
-            color: #f8fafc;
-            overflow-x: hidden;
-        }
-        
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, #a78bfa, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Custom UI Mockup Styles */
-        .mockup-card {
-            background: linear-gradient(145deg, rgba(30, 32, 40, 0.9), rgba(15, 17, 26, 0.9));
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-        
-        /* Hide scrollbar for clean UI */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0f; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-    </style>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -92,15 +26,15 @@
                 LifeMirror
             </a>
             <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-300">
+                <a href="#problem" class="hover:text-white transition-colors">The Problem</a>
                 <a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a>
-                <a href="#use-cases" class="hover:text-white transition-colors">Use Cases</a>
-                <a href="#features" class="hover:text-white transition-colors">Features</a>
-                <a href="#demo" class="hover:text-white transition-colors">Demo</a>
+                <a href="#features" class="hover:text-white transition-colors">Insights</a>
+                <a href="#demo" class="hover:text-white transition-colors">Experience</a>
                 <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
             </div>
             <div class="flex items-center gap-4">
-                <a href="#download" class="hidden md:block text-sm font-medium text-slate-300 hover:text-white">Log in</a>
-                <a href="#download" class="glass-panel px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/10 transition-colors">Get Early Access</a>
+                <a href="#" class="hidden md:block text-sm font-medium text-slate-300 hover:text-white">Log in</a>
+                <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer" class="glass-panel px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/10 transition-colors">Start Reflecting</a>
             </div>
         </div>
     </nav>
@@ -117,544 +51,449 @@
                     Now in Beta for Android
                 </div>
                 <h1 class="font-display text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6">
-                    Understand your life, <br><span class="text-gradient">effortlessly.</span>
+                    Your habits leave patterns.<br><span class="text-gradient">See them.</span>
                 </h1>
                 <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
-                    LifeMirror works with you — not against you.
-Automatically track routines, app usage, movement, and real-world context in the background, while still giving you full control to manually log moments that matter. The result is a living timeline of your life with deeply personal AI reflections, patterns, and insights — without the friction of constant journaling.
+                    LifeMirror automatically detects behavior patterns, focus cycles, distractions, and routines so you can understand yourself instead of guessing. An AI mirror for your real behavior.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                    <a href="#download" class="bg-white text-black px-8 py-4 rounded-full font-semibold text-center hover:bg-slate-200 transition-colors flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414C17.523 15.3414 16.0336 18.0664 13.9165 20.3551C12.9818 21.3653 11.0185 21.3653 10.0838 20.3551C7.9667 18.0664 6.47728 15.3414 6.47728 15.3414C4.85191 12.3394 5.37894 8.52989 7.8427 6.06613C10.1343 3.77457 13.866 3.77457 16.1576 6.06613C18.6213 8.52989 19.1484 12.3394 17.523 15.3414Z" opacity="0.5"/><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"/></svg>
-                        Download for Android
+                    <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer" class="bg-white text-black px-8 py-4 rounded-full font-semibold text-center hover:bg-slate-200 transition-colors flex items-center justify-center gap-2">
+                        Start Reflecting
                     </a>
                     <a href="#demo" class="glass-panel px-8 py-4 rounded-full font-semibold text-center hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         Watch Experience
                     </a>
                 </div>
-                
-                <div class="flex items-center gap-4 text-sm text-slate-400">
-                    <div class="flex -space-x-2">
-                        <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-background"></div>
-                        <div class="w-8 h-8 rounded-full bg-slate-600 border-2 border-background"></div>
-                        <div class="w-8 h-8 rounded-full bg-slate-500 border-2 border-background"></div>
-                    </div>
-                    <p>Join 5,000+ early adopters.</p>
-                </div>
             </div>
 
             <!-- Hero Interactive Mockup -->
-            <div class="relative w-full max-w-[350px] mx-auto hero-mockup">
-                <!-- Phone Frame -->
-                <div class="mockup-card rounded-[40px] p-2 aspect-[1/2.1] relative z-10 overflow-hidden">
-                    <div class="absolute top-0 inset-x-0 h-6 bg-black z-20 flex justify-center rounded-t-[38px]">
-                        <div class="w-24 h-5 bg-black rounded-b-xl"></div>
+            <div class="relative w-full max-w-[400px] mx-auto hero-mockup flex flex-col gap-5 z-10">
+                <div class="glass-panel p-5 rounded-2xl border border-accent/30 bg-accent/10 shadow-lg transform -rotate-2 hover:rotate-0 transition-transform cursor-default">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-accent">✧</span>
+                        <span class="text-xs font-semibold text-accent-light uppercase tracking-wider">Reflection</span>
                     </div>
-                    <!-- App UI -->
-                    <div class="bg-[#0a0a0f] w-full h-full rounded-[32px] p-5 pt-12 flex flex-col gap-4 overflow-hidden relative">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="font-display font-semibold text-xl">Today</h3>
-                            <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent">LM</div>
-                        </div>
-                        
-                        <!-- Insight Card -->
-                        <div class="glass-panel rounded-2xl p-4 border border-accent/30 bg-accent/5">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="text-accent">✧</span>
-                                <span class="text-xs font-semibold text-accent-light uppercase tracking-wider">AI Insight</span>
-                            </div>
-                            <p class="text-sm text-slate-200 leading-snug">You focus 38% better after morning walks. Consider maintaining this routine tomorrow.</p>
-                        </div>
-                        
-                        <!-- Timeline Items -->
-                        <div class="flex-1 overflow-hidden flex flex-col gap-3 relative">
-                            <div class="absolute left-[15px] top-2 bottom-0 w-px bg-slate-800"></div>
-                            
-                            <div class="flex gap-4 relative z-10">
-                                <div class="w-8 h-8 rounded-full bg-slate-800 border-4 border-[#0a0a0f] flex items-center justify-center text-xs mt-1 shrink-0">💻</div>
-                                <div class="glass-panel rounded-xl p-3 flex-1">
-                                    <div class="flex justify-between text-xs text-slate-400 mb-1"><span>09:00 - 11:30</span><span>2.5h</span></div>
-                                    <p class="font-medium text-sm">Deep Work Session</p>
-                                    <div class="text-xs text-secondary mt-1">VS Code &bull; Terminal</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex gap-4 relative z-10">
-                                <div class="w-8 h-8 rounded-full bg-slate-800 border-4 border-[#0a0a0f] flex items-center justify-center text-xs mt-1 shrink-0">🚶‍♂️</div>
-                                <div class="glass-panel rounded-xl p-3 flex-1">
-                                    <div class="flex justify-between text-xs text-slate-400 mb-1"><span>11:30 - 12:00</span><span>30m</span></div>
-                                    <p class="font-medium text-sm">Outdoor Walk</p>
-                                    <div class="text-xs text-emerald-400 mt-1">Activity Detected</div>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4 relative z-10">
-                                <div class="w-8 h-8 rounded-full bg-accent border-4 border-[#0a0a0f] flex items-center justify-center mt-1 shrink-0">
-                                    <span class="animate-ping absolute w-full h-full rounded-full bg-accent opacity-50"></span>
-                                    <div class="w-2 h-2 bg-white rounded-full"></div>
-                                </div>
-                                <div class="glass-panel rounded-xl p-3 flex-1 border-accent/30 shadow-[0_0_15px_rgba(139,92,246,0.15)]">
-                                    <div class="text-xs text-accent-light mb-1">Tracking Now...</div>
-                                    <p class="font-medium text-sm">Reading Documentation</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-slate-200 leading-snug">"You work best between 10PM–1AM. Consider shifting your deep work to this window."</p>
                 </div>
                 
-                <!-- Floating Elements around phone -->
-                <div class="absolute -right-12 top-20 glass-panel p-3 rounded-2xl animate-bounce" style="animation-duration: 3s;">
-                    <div class="text-xs text-slate-400 mb-1">Flow State</div>
-                    <div class="text-emerald-400 font-semibold text-sm">+85% Consistency</div>
+                <div class="glass-panel p-5 rounded-2xl border border-orange-500/30 bg-orange-500/10 shadow-lg transform translate-x-6 rotate-1 hover:rotate-0 transition-transform cursor-default">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-orange-400">✧</span>
+                        <span class="text-xs font-semibold text-orange-400 uppercase tracking-wider">Focus Alert</span>
+                    </div>
+                    <p class="text-slate-200 leading-snug">"Your focus drops significantly after 15 minutes of short-form video content."</p>
                 </div>
-                <div class="absolute -left-16 bottom-32 glass-panel p-3 rounded-2xl animate-bounce" style="animation-duration: 4s; animation-delay: 1s;">
-                    <div class="text-xs text-slate-400 mb-1">Screen Time</div>
-                    <div class="text-white font-semibold text-sm">-1.2h today</div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 shadow-lg transform -translate-x-4 rotate-2 hover:rotate-0 transition-transform cursor-default">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-emerald-400">✧</span>
+                        <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Pattern Found</span>
+                    </div>
+                    <p class="text-slate-200 leading-snug">"Coding sessions after a walk are 70% longer and more uninterrupted."</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Demo Video Section -->
-    <section id="demo" class="py-24 relative z-10">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">See your life, <span class="text-gradient">reflected.</span></h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Watch how LifeMirror seamlessly turns background data into meaningful personal insights.</p>
+    <!-- Emotional Problem Section -->
+    <section id="problem" class="py-24 relative overflow-hidden bg-black/40">
+        <div class="max-w-5xl mx-auto px-6 text-center gs-reveal">
+            <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">Most people don’t know where their life actually goes.</h2>
+            <p class="text-slate-400 text-xl leading-relaxed mb-16 max-w-3xl mx-auto">
+                You sit down with an intention. An hour passes. You've checked four apps, lost your train of thought, and feel busy without having made progress. The gap between your intentions and reality is hidden in your daily habits.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+                <div class="glass-panel p-8 rounded-3xl border border-white/5">
+                    <div class="text-orange-400 mb-4 text-3xl">🔄</div>
+                    <h3 class="font-bold text-xl mb-3 text-white">Distraction Loops</h3>
+                    <p class="text-slate-400 text-base">Mindless scrolling and context switching that continually fractures your attention and energy.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl border border-white/5">
+                    <div class="text-accent-light mb-4 text-3xl">⏳</div>
+                    <h3 class="font-bold text-xl mb-3 text-white">Unfinished Intentions</h3>
+                    <p class="text-slate-400 text-base">Feeling constantly busy all day, but ending the night realizing nothing truly meaningful was completed.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl border border-white/5">
+                    <div class="text-blue-400 mb-4 text-3xl">🧩</div>
+                    <h3 class="font-bold text-xl mb-3 text-white">Fragmented Focus</h3>
+                    <p class="text-slate-400 text-base">Losing your train of thought repeatedly because you don't realize what triggers your loss of concentration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before vs After Section -->
+    <section id="transformation" class="py-24 border-t border-white/5 relative">
+        <div class="max-w-6xl mx-auto px-6 gs-reveal">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">A mirror for your real behavior.</h2>
+                <p class="text-slate-400 text-lg">Stop guessing how you spend your time. Start understanding it.</p>
             </div>
             
-            <div class="relative rounded-3xl overflow-hidden glass-panel border border-white/10 aspect-video group cursor-pointer shadow-[0_0_50px_rgba(139,92,246,0.15)] gs-reveal">
-                <!-- Placeholder for video -->
-                <div class="absolute inset-0 bg-slate-900/80 flex items-center justify-center">
-                    <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform duration-300 border border-accent/50">
-                        <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Before -->
+                <div class="glass-panel p-10 rounded-3xl border border-red-500/20 bg-red-500/5 transition-transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-bold text-red-400 mb-8 flex items-center gap-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Before LifeMirror
+                    </h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4 text-slate-300 text-lg">
+                            <span class="text-red-400 mt-1 font-bold">✗</span> Guessing where your time and energy went
+                        </li>
+                        <li class="flex items-start gap-4 text-slate-300 text-lg">
+                            <span class="text-red-400 mt-1 font-bold">✗</span> Losing hours to unconscious scrolling habits
+                        </li>
+                        <li class="flex items-start gap-4 text-slate-300 text-lg">
+                            <span class="text-red-400 mt-1 font-bold">✗</span> Scattered focus and heavily fragmented attention
+                        </li>
+                        <li class="flex items-start gap-4 text-slate-300 text-lg">
+                            <span class="text-red-400 mt-1 font-bold">✗</span> Endless manual self-tracking and journaling effort
+                        </li>
+                    </ul>
                 </div>
-                <!-- Faked UI behind video play button -->
-                <div class="absolute inset-0 opacity-40 mix-blend-screen bg-gradient-to-tr from-accent/20 to-transparent pointer-events-none"></div>
+                
+                <!-- After -->
+                <div class="glass-panel p-10 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 relative overflow-hidden transition-transform hover:-translate-y-1 shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent pointer-events-none"></div>
+                    <h3 class="text-2xl font-bold text-emerald-400 mb-8 flex items-center gap-3 relative z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        After LifeMirror
+                    </h3>
+                    <ul class="space-y-6 relative z-10">
+                        <li class="flex items-start gap-4 text-slate-100 text-lg">
+                            <span class="text-emerald-400 mt-1 font-bold">✓</span> Clear, personalized behavioral insights
+                        </li>
+                        <li class="flex items-start gap-4 text-slate-100 text-lg">
+                            <span class="text-emerald-400 mt-1 font-bold">✓</span> Deep awareness of your specific distraction triggers
+                        </li>
+                        <li class="flex items-start gap-4 text-slate-100 text-lg">
+                            <span class="text-emerald-400 mt-1 font-bold">✓</span> Working in harmony with your natural focus cycles
+                        </li>
+                        <li class="flex items-start gap-4 text-slate-100 text-lg">
+                            <span class="text-emerald-400 mt-1 font-bold">✓</span> Automatic reflection, zero manual journaling required
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- How It Works -->
-    <section id="how-it-works" class="py-24 border-t border-white/5 relative">
-        <div class="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent"></div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 gs-reveal">
-                <span class="text-accent font-semibold tracking-wider uppercase text-sm">Welcome to your personal Life Mirror.</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold mt-2 mb-4">How it Works</h2>
+    <section id="how-it-works" class="py-24 border-t border-white/5 relative bg-black/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 gs-reveal">
+                <span class="text-accent font-semibold tracking-wider uppercase text-sm mb-3 block">Simple Process</span>
+                <h2 class="font-display text-3xl md:text-5xl font-bold">How LifeMirror works</h2>
             </div>
-
-            <div class="grid md:grid-cols-4 gap-6 mb-16">
+            
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- connecting line -->
+                <div class="hidden md:block absolute top-1/2 left-[10%] w-[80%] h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent -translate-y-1/2 z-0"></div>
+                
                 <!-- Step 1 -->
-                <div class="glass-panel p-8 rounded-3xl gs-reveal">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="bg-accent/15 text-accent px-4 py-2 rounded-xl font-display font-bold">01</div>
-                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-xl mb-3">1. Notice</h3>
-                    <p class="text-slate-400 leading-relaxed">Tap whenever you shift focus. Noticing is the first step.</p>
+                <div class="glass-panel p-10 rounded-[2rem] text-center relative z-10 gs-reveal">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-accent/20 text-accent flex items-center justify-center text-3xl font-display font-bold mb-8 border border-accent/30 shadow-[0_0_20px_rgba(139,92,246,0.2)]">1</div>
+                    <h3 class="text-2xl font-bold mb-4 text-white font-display">It Observes</h3>
+                    <p class="text-slate-400 leading-relaxed">LifeMirror silently notices your digital behavior, app usage, and context in the background without requiring any manual logging from you.</p>
                 </div>
-
+                
                 <!-- Step 2 -->
-                <div class="glass-panel p-8 rounded-3xl gs-reveal delay-100">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="bg-accent/15 text-accent px-4 py-2 rounded-xl font-display font-bold">02</div>
-                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-xl mb-3">2. Detail</h3>
-                    <p class="text-slate-400 leading-relaxed">Add sub-tags to your sessions for deeper clarity.</p>
+                <div class="glass-panel p-10 rounded-[2rem] text-center relative z-10 gs-reveal delay-100">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-secondary/20 text-secondary flex items-center justify-center text-3xl font-display font-bold mb-8 border border-secondary/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]">2</div>
+                    <h3 class="text-2xl font-bold mb-4 text-white font-display">AI Identifies</h3>
+                    <p class="text-slate-400 leading-relaxed">The system intelligently analyzes your focus cycles, distraction triggers, and daily routines to find the hidden connections you might miss.</p>
                 </div>
-
+                
                 <!-- Step 3 -->
-                <div class="glass-panel p-8 rounded-3xl gs-reveal delay-200">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="bg-accent/15 text-accent px-4 py-2 rounded-xl font-display font-bold">03</div>
-                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-xl mb-3">3. Reflect</h3>
-                    <p class="text-slate-400 leading-relaxed">The AI mirrors your rhythm back to you in your daily story.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="glass-panel p-8 rounded-3xl gs-reveal delay-300">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="bg-accent/15 text-accent px-4 py-2 rounded-xl font-display font-bold">04</div>
-                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-xl mb-3">4. Grow</h3>
-                    <p class="text-slate-400 leading-relaxed">Use insights to align your time with your true intentions.</p>
-                </div>
-            </div>
-
-            <!-- WHY Section -->
-            <div class="max-w-3xl mx-auto gs-reveal">
-                <div class="glass-panel p-10 rounded-3xl border-accent/30 bg-accent/5 shadow-[0_0_30px_rgba(139,92,246,0.1)]">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="bg-gradient-to-r from-accent to-secondary text-white px-5 py-2 rounded-xl font-display font-bold tracking-wider">WHY</div>
-                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                            <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-2xl mb-4">Why LifeMirror?</h3>
-                    <p class="text-lg text-slate-300 leading-relaxed">"Because how we spend our days is how we spend our lives."</p>
+                <div class="glass-panel p-10 rounded-[2rem] text-center relative z-10 gs-reveal delay-200">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl font-display font-bold mb-8 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.2)]">3</div>
+                    <h3 class="text-2xl font-bold mb-4 text-white font-display">You Reflect</h3>
+                    <p class="text-slate-400 leading-relaxed">You receive gentle, actionable reflections that help you understand your authentic self, allowing you to align your time with your true intentions.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Daily Experience -->
-    <section id="daily" class="py-24 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16">
-                <span class="text-accent font-semibold tracking-wider uppercase text-sm">The Daily Experience</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold mt-2 mb-4">How LifeMirror fits your day.</h2>
-                <p class="text-slate-400 text-lg max-w-2xl">A frictionless rhythm. You live your life, the app quietly structures the data.</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-6">
-                <!-- Morning -->
-                <div class="glass-panel p-6 rounded-3xl gs-reveal">
-                    <div class="w-12 h-12 rounded-2xl bg-orange-500/10 text-orange-400 flex items-center justify-center text-xl mb-6">🌅</div>
-                    <h3 class="font-bold text-xl mb-2">Morning</h3>
-                    <p class="text-sm text-slate-400 mb-4">Set your intentions. Review your sleep-to-wake transition and AI-suggested focus blocks.</p>
-                    <div class="border-t border-white/5 pt-4 mt-auto">
-                        <div class="text-xs font-mono text-slate-500">Intention: Deep Work</div>
-                    </div>
-                </div>
-
-                <!-- Day -->
-                <div class="glass-panel p-6 rounded-3xl gs-reveal delay-100">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-6">⚡</div>
-                    <h3 class="font-bold text-xl mb-2">During the Day</h3>
-                    <p class="text-sm text-slate-400 mb-4">Zero interaction needed. App usage, physical activity, and calls are tracked ambiently.</p>
-                    <div class="border-t border-white/5 pt-4 mt-auto">
-                        <div class="text-xs font-mono text-slate-500">Auto-tracking active</div>
-                    </div>
-                </div>
-
-                <!-- Evening -->
-                <div class="glass-panel p-6 rounded-3xl gs-reveal delay-200">
-                    <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-6">🌙</div>
-                    <h3 class="font-bold text-xl mb-2">Evening</h3>
-                    <p class="text-sm text-slate-400 mb-4">Review your generated timeline. See what apps drained you and what habits energized you.</p>
-                    <div class="border-t border-white/5 pt-4 mt-auto">
-                        <div class="text-xs font-mono text-slate-500">Timeline generated</div>
-                    </div>
-                </div>
-
-                <!-- Weekly -->
-                <div class="glass-panel p-6 rounded-3xl bg-accent/5 border-accent/20 gs-reveal delay-300">
-                    <div class="w-12 h-12 rounded-2xl bg-accent/20 text-accent-light flex items-center justify-center text-xl mb-6">📊</div>
-                    <h3 class="font-bold text-xl mb-2">Weekly</h3>
-                    <p class="text-sm text-slate-400 mb-4">Receive a thoughtful AI breakdown of your focus trends, logged habits, and daily balance.</p>
-                    <div class="border-t border-accent/10 pt-4 mt-auto">
-                        <div class="text-xs font-mono text-accent-light">AI Report Ready</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Concrete Features -->
-    <section id="features" class="py-24 bg-black/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20 max-w-3xl mx-auto">
-                <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">Concrete features, <br>abstracted complexity.</h2>
-                <p class="text-slate-400 text-lg">LifeMirror helps surface trends in your focus, routines, habits, and daily balance.</p>
-            </div>
-
+    <!-- Features / Outcomes -->
+    <section id="features" class="py-24 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            
             <!-- Feature 1 -->
-            <div class="grid md:grid-cols-2 gap-16 items-center mb-24 gs-reveal">
-                <div class="order-2 md:order-1 relative">
-                    <!-- Feature Mockup -->
-                    <div class="mockup-card rounded-2xl p-6 aspect-square w-full max-w-md mx-auto relative overflow-hidden">
-                        <h4 class="font-semibold text-lg mb-6">Usage Breakdown</h4>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between text-sm mb-1"><span>Productivity Apps</span><span class="text-emerald-400">4h 20m</span></div>
-                                <div class="w-full bg-slate-800 rounded-full h-2"><div class="bg-emerald-400 h-2 rounded-full w-[70%]"></div></div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-sm mb-1"><span>Social Media</span><span class="text-orange-400">1h 15m</span></div>
-                                <div class="w-full bg-slate-800 rounded-full h-2"><div class="bg-orange-400 h-2 rounded-full w-[25%]"></div></div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-sm mb-1"><span>Communication</span><span class="text-blue-400">45m</span></div>
-                                <div class="w-full bg-slate-800 rounded-full h-2"><div class="bg-blue-400 h-2 rounded-full w-[15%]"></div></div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8 glass-panel p-4 rounded-xl border-emerald-500/30 bg-emerald-500/5">
-                            <p class="text-sm text-slate-300"><span class="text-emerald-400 font-bold">↑ 12%</span> more intentional time compared to last Tuesday.</p>
-                        </div>
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-32 gs-reveal">
+                <div>
+                    <h3 class="font-display text-3xl md:text-4xl font-bold mb-6 leading-tight">Understand where your attention disappears</h3>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">Stop wondering where the day went. Discover exactly which habits pull you out of your flow and fracture your attention, allowing you to reclaim your time.</p>
+                    
+                    <!-- insight card mockup -->
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-orange-500 bg-orange-500/5 mt-8 shadow-[0_5px_20px_rgba(249,115,22,0.05)]">
+                        <span class="text-xs font-bold text-orange-400 uppercase tracking-widest mb-3 block">Insight Discovered</span>
+                        <p class="text-slate-200 font-medium text-lg italic">"41 app switches detected during your work session. You tend to lose concentration immediately after social media interruptions."</p>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                
+                <div class="glass-panel rounded-[2.5rem] p-8 bg-gradient-to-br from-slate-900 to-black border border-white/10 aspect-square flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-orange-500/30 via-transparent to-transparent"></div>
+                    
+                    <div class="relative z-10 w-full flex flex-col gap-4 px-4">
+                        <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/10 backdrop-blur-md">
+                            <span class="text-sm font-medium text-white">Deep Work</span>
+                            <span class="text-xs font-bold text-slate-400">22m</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-orange-500/20 p-4 rounded-xl border border-orange-500/30 backdrop-blur-md -translate-x-6">
+                            <span class="text-sm font-medium text-orange-200">Social Media Interruption</span>
+                            <span class="text-xs font-bold text-orange-300">8m</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/10 backdrop-blur-md">
+                            <span class="text-sm font-medium text-slate-400">Attempted Focus</span>
+                            <span class="text-xs font-bold text-slate-500">14m</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-orange-500/20 p-4 rounded-xl border border-orange-500/30 backdrop-blur-md translate-x-4">
+                            <span class="text-sm font-medium text-orange-200">News Feed Habit</span>
+                            <span class="text-xs font-bold text-orange-300">12m</span>
+                        </div>
                     </div>
-                    <h3 class="font-display text-3xl font-bold mb-4">Context-Aware App Tracking</h3>
-                    <p class="text-slate-400 text-lg mb-6">It knows what you're doing without you telling it. LifeMirror securely categorizes your active screen time to distinguish deep work from doomscrolling.</p>
-                    <ul class="space-y-3 text-slate-300">
-                        <li class="flex items-center gap-3"><span class="text-accent">✓</span> Completely on-device analysis</li>
-                        <li class="flex items-center gap-3"><span class="text-accent">✓</span> Automatic categorization</li>
-                        <li class="flex items-center gap-3"><span class="text-accent">✓</span> No app content is recorded</li>
-                    </ul>
                 </div>
             </div>
 
             <!-- Feature 2 -->
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-32 gs-reveal">
+                <div class="order-2 md:order-1 glass-panel rounded-[2.5rem] p-8 bg-gradient-to-br from-slate-900 to-black border border-white/10 aspect-square flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-accent/30 via-transparent to-transparent"></div>
+                    
+                    <div class="relative z-10 w-full px-4">
+                        <div class="flex items-end justify-between h-40 gap-3 border-b border-white/10 pb-3">
+                            <div class="w-1/6 bg-white/10 rounded-t-lg h-[25%] transition-all hover:h-[30%]"></div>
+                            <div class="w-1/6 bg-white/10 rounded-t-lg h-[35%] transition-all hover:h-[40%]"></div>
+                            <div class="w-1/6 bg-accent/80 rounded-t-lg h-full shadow-[0_0_20px_rgba(139,92,246,0.6)] relative cursor-pointer group">
+                                <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-bold text-accent-light opacity-0 group-hover:opacity-100 transition-opacity">Peak</div>
+                            </div>
+                            <div class="w-1/6 bg-accent/50 rounded-t-lg h-[80%] transition-all"></div>
+                            <div class="w-1/6 bg-white/10 rounded-t-lg h-[50%] transition-all"></div>
+                            <div class="w-1/6 bg-white/10 rounded-t-lg h-[20%] transition-all"></div>
+                        </div>
+                        <div class="flex justify-between mt-4 text-[10px] text-slate-500 uppercase tracking-widest font-bold">
+                            <span>6 PM</span>
+                            <span class="text-accent-light">11 PM</span>
+                            <span>4 AM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2">
+                    <h3 class="font-display text-3xl md:text-4xl font-bold mb-6 leading-tight">Detect hidden behavior patterns</h3>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">Your daily habits leave footprints. The AI connects the dots between your activities to reveal the invisible routines shaping your life, giving you the power to change them.</p>
+                    
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-accent bg-accent/5 mt-8 shadow-[0_5px_20px_rgba(139,92,246,0.05)]">
+                        <span class="text-xs font-bold text-accent-light uppercase tracking-widest mb-3 block">Insight Discovered</span>
+                        <p class="text-slate-200 font-medium text-lg italic">"Your deepest focus periods consistently happen between 11:12 PM and 1:03 AM. You might be a natural night owl."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
             <div class="grid md:grid-cols-2 gap-16 items-center gs-reveal">
                 <div>
-                    <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    <h3 class="font-display text-3xl md:text-4xl font-bold mb-6 leading-tight">See what improves your focus</h3>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">Learn what activities actually recharge you. LifeMirror analyzes the context of your best sessions so you can intentionally replicate your ideal environment.</p>
+                    
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-emerald-500 bg-emerald-500/5 mt-8 shadow-[0_5px_20px_rgba(16,185,129,0.05)]">
+                        <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-3 block">Insight Discovered</span>
+                        <p class="text-slate-200 font-medium text-lg italic">"Your best writing sessions happen immediately after a morning walk. Consider making this a permanent pre-work routine."</p>
                     </div>
-                    <h3 class="font-display text-3xl font-bold mb-4">AI Insight Reflections</h3>
-                    <p class="text-slate-400 text-lg mb-6">Data is useless without meaning. The AI surfaces connections in your logs that are easy to miss—like how your morning physical activity correlates with your afternoon focus trends.</p>
-                    <ul class="space-y-3 text-slate-300">
-                        <li class="flex items-center gap-3"><span class="text-secondary">✓</span> Personalized observations</li>
-                        <li class="flex items-center gap-3"><span class="text-secondary">✓</span> Consistency & habit insights</li>
-                        <li class="flex items-center gap-3"><span class="text-secondary">✓</span> Actionable daily summaries</li>
-                    </ul>
                 </div>
-                <div class="relative">
-                    <div class="mockup-card rounded-2xl p-6 aspect-square w-full max-w-md mx-auto relative overflow-hidden flex flex-col justify-center">
-                        <div class="space-y-4">
-                            <div class="glass-panel p-4 rounded-xl border-slate-700">
-                                <div class="flex items-center gap-2 mb-2"><span class="text-xs text-slate-400">Reflection • Yesterday</span></div>
-                                <p class="text-sm">"You had 3 back-to-back long calls. Notice how your app usage shifted to entertainment apps immediately after? Mental fatigue is normal here."</p>
+                
+                <div class="glass-panel rounded-[2.5rem] p-8 bg-gradient-to-br from-slate-900 to-black border border-white/10 aspect-square flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-emerald-500/30 via-transparent to-transparent"></div>
+                    
+                    <div class="relative z-10 w-full flex flex-col gap-6 px-4">
+                        <div class="flex items-center gap-5">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 flex items-center justify-center border border-emerald-500/40 shrink-0 text-xl shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                                🚶
                             </div>
-                            <div class="glass-panel p-4 rounded-xl border-accent/40 bg-accent/5 translate-x-4">
-                                <div class="flex items-center gap-2 mb-2"><span class="text-xs text-accent-light">Suggestion • Today</span></div>
-                                <p class="text-sm">"Try scheduling a 15-minute screen-free buffer after your 2 PM meeting to reset."</p>
+                            <div class="flex-1 h-3 bg-emerald-500/20 rounded-full overflow-hidden">
+                                <div class="w-full h-full bg-emerald-400 rounded-full"></div>
                             </div>
+                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Catalyst</span>
+                        </div>
+                        
+                        <div class="pl-6 border-l-2 border-emerald-500/30 ml-6 py-4">
+                            <div class="flex items-center gap-4 bg-white/5 px-4 py-3 rounded-xl border border-white/10 w-fit">
+                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping absolute opacity-75"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 relative"></div>
+                                <div class="text-sm font-semibold text-white tracking-wide">Flow State Initiated</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-5">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-500/20 flex items-center justify-center border border-blue-500/40 shrink-0 text-xl">
+                                💻
+                            </div>
+                            <div class="flex-1 h-3 bg-blue-500/20 rounded-full overflow-hidden">
+                                <div class="w-full h-full bg-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+                            </div>
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">2h 15m</span>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
 
-    <!-- Use Cases Showcase -->
-    <section id="use-cases" class="py-24 border-t border-white/5 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
+    <!-- Demo Video Section -->
+    <section id="demo" class="py-32 relative z-10 border-t border-white/5 bg-black/60">
+        <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16 gs-reveal">
-                <span class="text-secondary font-semibold tracking-wider uppercase text-sm">Real-World Application</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold mt-2 mb-4">Use Cases</h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto">See how LifeMirror adapts to different lifestyles, providing unique insights for every path.</p>
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">See your reflections in action.</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-xl">Watch how LifeMirror seamlessly turns your daily behavior into meaningful personal insights.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Use Case 1: Working Professional -->
-                <div class="glass-panel p-8 rounded-[32px] hover:-translate-y-2 transition-all duration-500 gs-reveal group">
-                    <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">💼</div>
-                    <h3 class="font-display font-bold text-xl mb-2 text-white">Alex Chen</h3>
-                    <p class="text-accent-light text-xs font-mono mb-4 uppercase tracking-widest">Working Professional</p>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">"LifeMirror helps me track my focus habits. It maps my deep work blocks and shows trends in how meetings and context switching affect my daily momentum."</p>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-[10px] text-slate-500 uppercase"><span>Focus Mode</span><span>3.0h Target</span></div>
-                        <div class="w-full bg-white/5 rounded-full h-1.5"><div class="bg-accent h-1.5 rounded-full w-[85%]"></div></div>
+            <div class="relative rounded-[2.5rem] overflow-hidden glass-panel border border-white/10 aspect-video group cursor-pointer shadow-[0_0_60px_rgba(139,92,246,0.15)] gs-reveal transition-transform hover:scale-[1.01] duration-500">
+                <!-- Placeholder for video -->
+                <div class="absolute inset-0 bg-slate-900/90 flex flex-col items-center justify-center p-8 text-center">
+                    <div class="w-24 h-24 rounded-full bg-accent/20 flex items-center justify-center backdrop-blur-md group-hover:scale-110 group-hover:bg-accent/30 transition-all duration-300 border border-accent/50 mb-10 shadow-[0_0_30px_rgba(139,92,246,0.3)]">
+                        <svg class="w-10 h-10 text-white ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-sm font-bold text-slate-400 uppercase tracking-widest">
+                        <span class="bg-white/5 px-4 py-2 rounded-lg">1. Behavior Happens</span> 
+                        <span class="hidden md:inline text-slate-600">→</span>
+                        <span class="bg-white/5 px-4 py-2 rounded-lg">2. AI Interprets</span> 
+                        <span class="hidden md:inline text-slate-600">→</span>
+                        <span class="text-accent-light bg-accent/10 border border-accent/20 px-4 py-2 rounded-lg shadow-[0_0_15px_rgba(139,92,246,0.2)]">3. Insight Appears</span>
                     </div>
                 </div>
-
-                <!-- Use Case 2: Startup Founder -->
-                <div class="glass-panel p-8 rounded-[32px] hover:-translate-y-2 transition-all duration-500 gs-reveal delay-100 group">
-                    <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🚀</div>
-                    <h3 class="font-display font-bold text-xl mb-2 text-white">Marcus Thorne</h3>
-                    <p class="text-secondary text-xs font-mono mb-4 uppercase tracking-widest">Startup Founder</p>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">"In the chaos of a funding round, LifeMirror is my anchor. It helps reveal patterns in my work habits, showing how late-night communication correlates with my focus and energy trends the next day."</p>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-[10px] text-slate-500 uppercase"><span>Rhythm Consistency</span><span>Moderate</span></div>
-                        <div class="w-full bg-white/5 rounded-full h-1.5"><div class="bg-secondary h-1.5 rounded-full w-[40%]"></div></div>
-                    </div>
-                </div>
-
-                <!-- Use Case 3: Fitness Focused -->
-                <div class="glass-panel p-8 rounded-[32px] hover:-translate-y-2 transition-all duration-500 gs-reveal delay-200 group">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🏋️</div>
-                    <h3 class="font-display font-bold text-xl mb-2 text-white">Sarah Miller</h3>
-                    <p class="text-emerald-400 text-xs font-mono mb-4 uppercase tracking-widest">Fitness Focused</p>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">"88% tracking consistency. I use the reflection features to connect my sleep trends and daily routines with how I feel during training, helping me adjust my habits."</p>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-[10px] text-slate-500 uppercase"><span>Routine Alignment</span><span>95%</span></div>
-                        <div class="w-full bg-white/5 rounded-full h-1.5"><div class="bg-emerald-400 h-1.5 rounded-full w-[95%]"></div></div>
-                    </div>
-                </div>
-
-                <!-- Use Case 4: Student -->
-                <div class="glass-panel p-8 rounded-[32px] hover:-translate-y-2 transition-all duration-500 gs-reveal delay-300 group">
-                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🎓</div>
-                    <h3 class="font-display font-bold text-xl mb-2 text-white">Leo Garcia</h3>
-                    <p class="text-orange-400 text-xs font-mono mb-4 uppercase tracking-widest">Student</p>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">"Exam season is intense. LifeMirror helps me track my late-night study patterns and prompts me to reflect on scheduling recovery time during high-stress weeks."</p>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-[10px] text-slate-500 uppercase"><span>Study Depth</span><span>5.0h Deep</span></div>
-                        <div class="w-full bg-white/5 rounded-full h-1.5"><div class="bg-orange-400 h-1.5 rounded-full w-[65%]"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-16 text-center gs-reveal">
-                <a href="#" class="glass-panel px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all inline-flex items-center gap-3">
-                    View Detailed Stories
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </a>
+                <!-- Faked UI overlay -->
+                <div class="absolute inset-0 opacity-30 mix-blend-screen bg-gradient-to-tr from-accent/30 via-transparent to-secondary/10 pointer-events-none"></div>
             </div>
         </div>
     </section>
 
     <!-- Trust & Privacy -->
-    <section class="py-24 relative overflow-hidden">
+    <section class="py-24 relative overflow-hidden border-t border-white/5">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-accent/5"></div>
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10 gs-reveal">
-            <div class="w-16 h-16 mx-auto bg-slate-800 rounded-2xl flex items-center justify-center mb-8">
-                <svg class="w-8 h-8 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            <div class="w-20 h-20 mx-auto bg-slate-800 rounded-[2rem] flex items-center justify-center mb-10 shadow-lg">
+                <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
             </div>
-            <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">Your life is yours. Keep it that way.</h2>
-            <p class="text-slate-400 text-lg mb-10">We believe self-awareness shouldn't cost you your privacy. LifeMirror is built on a local-first philosophy with uncompromising security.</p>
+            <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">Your life is yours. Keep it that way.</h2>
+            <p class="text-slate-400 text-xl mb-16 max-w-3xl mx-auto">We believe true self-awareness shouldn't cost you your privacy. LifeMirror is built on a local-first philosophy with uncompromising security.</p>
             
-            <div class="grid sm:grid-cols-2 gap-4 text-left">
-                <div class="glass-panel p-6 rounded-2xl">
-                    <h4 class="font-bold mb-2">Local Activity Detection</h4>
-                    <p class="text-sm text-slate-400">All app usage and physical activity detection is processed entirely on your device.</p>
+            <div class="grid sm:grid-cols-2 gap-6 text-left">
+                <div class="glass-panel p-8 rounded-[2rem]">
+                    <h4 class="font-bold text-xl mb-3 text-white">Local Activity Detection</h4>
+                    <p class="text-base text-slate-400">All app usage and physical activity detection is processed entirely on your own device.</p>
                 </div>
-                <div class="glass-panel p-6 rounded-2xl">
-                    <h4 class="font-bold mb-2">Zero Content Tracking</h4>
-                    <p class="text-sm text-slate-400">We track *that* you used an app, never *what* you typed or looked at within it.</p>
+                <div class="glass-panel p-8 rounded-[2rem]">
+                    <h4 class="font-bold text-xl mb-3 text-white">Zero Content Tracking</h4>
+                    <p class="text-base text-slate-400">We track <em>that</em> you used an app, never <em>what</em> you typed or looked at within it.</p>
                 </div>
-                <div class="glass-panel p-6 rounded-2xl">
-                    <h4 class="font-bold mb-2">Encrypted Sync</h4>
-                    <p class="text-sm text-slate-400">If you opt-in to cloud backups, your data is securely stored and inaccessible to third parties.</p>
+                <div class="glass-panel p-8 rounded-[2rem]">
+                    <h4 class="font-bold text-xl mb-3 text-white">Encrypted Sync</h4>
+                    <p class="text-base text-slate-400">If you opt-in to cloud backups, your data is securely stored and inaccessible to third parties.</p>
                 </div>
-                <div class="glass-panel p-6 rounded-2xl">
-                    <h4 class="font-bold mb-2">No Manipulative Algorithms</h4>
-                    <p class="text-sm text-slate-400">We design for mindful understanding, not addictive engagement. No dark patterns.</p>
+                <div class="glass-panel p-8 rounded-[2rem]">
+                    <h4 class="font-bold text-xl mb-3 text-white">No Manipulative Algorithms</h4>
+                    <p class="text-base text-slate-400">We design for mindful understanding, not addictive engagement. No dark patterns.</p>
                 </div>
-            </div>
-            
-            <div class="mt-12">
-                <a href="privacy.html" class="text-accent hover:text-white transition-colors border-b border-accent pb-1">Read our full Privacy Policy</a>
             </div>
         </div>
     </section>
 
     <!-- Pricing Strategy -->
-    <section id="pricing" class="py-24 border-t border-white/5">
+    <section id="pricing" class="py-24 border-t border-white/5 bg-background">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">Own your reflection system.</h2>
-                <p class="text-slate-400 text-lg">Respectful pricing. No growth-hacker SaaS tricks.</p>
+            <div class="text-center mb-20 gs-reveal">
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">Own your reflection system.</h2>
+                <p class="text-slate-400 text-xl">Respectful pricing. No growth-hacker SaaS tricks.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Free -->
-                <div class="glass-panel p-8 rounded-3xl border-t-4 border-t-slate-500 flex flex-col gs-reveal">
-                    <h3 class="text-2xl font-bold mb-2">Awareness</h3>
-                    <div class="text-4xl font-display font-bold mb-2">Free</div>
-                    <p class="text-slate-400 text-sm mb-8">Build baseline awareness habits.</p>
+                <div class="glass-panel p-10 rounded-[2.5rem] border-t-4 border-t-slate-500 flex flex-col gs-reveal hover:-translate-y-1 transition-transform">
+                    <h3 class="text-2xl font-bold mb-2 text-white">Awareness</h3>
+                    <div class="text-5xl font-display font-bold mb-4 text-white">Free</div>
+                    <p class="text-slate-400 text-base mb-10">Build baseline awareness habits.</p>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-slate-500">✓</span> Basic app tracking</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-slate-500">✓</span> Daily timeline view</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-slate-500">✓</span> Local data storage</li>
+                    <ul class="space-y-5 mb-10 flex-1">
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-slate-500 font-bold">✓</span> Basic behavior tracking</li>
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-slate-500 font-bold">✓</span> Daily timeline view</li>
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-slate-500 font-bold">✓</span> Local data storage</li>
                     </ul>
-                    <a href="#download" class="block w-full py-3 rounded-xl bg-slate-800 text-center font-semibold hover:bg-slate-700 transition-colors">Start Free</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-2xl bg-slate-800 text-center font-bold text-white hover:bg-slate-700 transition-colors">Start Free</a>
                 </div>
 
                 <!-- Pro Lifetime -->
-                <div class="glass-panel p-8 rounded-3xl border-t-4 border-t-accent bg-accent/5 relative flex flex-col transform md:-translate-y-4 gs-reveal delay-100">
-                    <div class="absolute top-0 right-8 -translate-y-1/2 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Own it forever</div>
-                    <h3 class="text-2xl font-bold mb-2">Lifetime Pro</h3>
-                    <div class="text-4xl font-display font-bold mb-2">$49</div>
-                    <p class="text-accent-light text-sm mb-8">Own your reflection system forever.</p>
+                <div class="glass-panel p-10 rounded-[2.5rem] border-t-4 border-t-accent bg-accent/5 relative flex flex-col transform md:-translate-y-4 gs-reveal delay-100 hover:-translate-y-6 transition-transform shadow-[0_10px_40px_rgba(139,92,246,0.1)]">
+                    <div class="absolute top-0 right-8 -translate-y-1/2 bg-accent text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">Own it forever</div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Lifetime Pro</h3>
+                    <div class="text-5xl font-display font-bold mb-4 text-white">$49</div>
+                    <p class="text-accent-light text-base mb-10">Own your reflection system forever.</p>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-accent">✓</span> Infinite timeline history</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-accent">✓</span> Secure cloud sync</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-accent">✓</span> Custom tagging & rhythms</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-accent">✓</span> Export all your data</li>
+                    <ul class="space-y-5 mb-10 flex-1">
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-accent font-bold">✓</span> Infinite timeline history</li>
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-accent font-bold">✓</span> Secure cloud sync</li>
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-accent font-bold">✓</span> Custom tagging & rhythms</li>
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-accent font-bold">✓</span> Export all your data</li>
                     </ul>
-                    <a href="#download" class="block w-full py-3 rounded-xl bg-accent text-white text-center font-semibold hover:bg-accent-dark transition-colors shadow-[0_0_20px_rgba(139,92,246,0.3)]">Get Lifetime Access</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-2xl bg-accent text-white text-center font-bold hover:bg-accent-dark transition-colors shadow-[0_0_20px_rgba(139,92,246,0.3)]">Get Lifetime Access</a>
                 </div>
 
                 <!-- AI+ -->
-                <div class="glass-panel p-8 rounded-3xl border-t-4 border-t-secondary flex flex-col gs-reveal delay-200">
-                    <h3 class="text-2xl font-bold mb-2">Intelligence+</h3>
-                    <div class="text-4xl font-display font-bold mb-2">$5<span class="text-lg text-slate-500 font-normal">/mo</span></div>
-                    <p class="text-slate-400 text-sm mb-8">Unlock deeper personalized intelligence.</p>
+                <div class="glass-panel p-10 rounded-[2.5rem] border-t-4 border-t-secondary flex flex-col gs-reveal delay-200 hover:-translate-y-1 transition-transform">
+                    <h3 class="text-2xl font-bold mb-2 text-white">Intelligence+</h3>
+                    <div class="text-5xl font-display font-bold mb-4 text-white">$5<span class="text-xl text-slate-500 font-normal">/mo</span></div>
+                    <p class="text-slate-400 text-base mb-10">Unlock deeper personalized intelligence.</p>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-secondary">✓</span> Everything in Pro</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-secondary">✓</span> Daily AI generated reflections</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-secondary">✓</span> Advanced trend & habit correlation</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-secondary">✓</span> Chat with your life data</li>
+                    <ul class="space-y-5 mb-10 flex-1">
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-secondary font-bold">✓</span> Everything in Pro</li>
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-secondary font-bold">✓</span> Daily AI generated reflections</li>
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-secondary font-bold">✓</span> Advanced trend & habit correlation</li>
+                        <li class="flex items-center gap-4 text-base text-slate-300"><span class="text-secondary font-bold">✓</span> Chat with your life data</li>
                     </ul>
-                    <a href="#download" class="block w-full py-3 rounded-xl bg-secondary/20 text-secondary text-center font-semibold hover:bg-secondary/30 transition-colors">Add Intelligence</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-2xl bg-secondary/20 text-secondary text-center font-bold hover:bg-secondary/30 transition-colors">Add Intelligence</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Future Vision -->
-    <section class="py-24 bg-black/80">
-        <div class="max-w-4xl mx-auto px-6 text-center gs-reveal">
-            <span class="text-slate-500 tracking-widest uppercase text-sm font-semibold mb-4 block">The Roadmap</span>
-            <h2 class="font-display text-3xl font-bold mb-6">A vision for true self-awareness.</h2>
-            <p class="text-slate-400 mb-10 max-w-2xl mx-auto">We are building toward a future where technology doesn't distract you, but grounds you. Upcoming integrations include wearable biometrics, deeper location intelligence, and mindful work-balance insights.</p>
-            
-            <div class="flex flex-wrap justify-center gap-4">
-                <div class="px-4 py-2 rounded-full border border-white/10 text-sm text-slate-300">Smartwatch Integration</div>
-                <div class="px-4 py-2 rounded-full border border-white/10 text-sm text-slate-300">Biometric Focus Correlation</div>
-                <div class="px-4 py-2 rounded-full border border-white/10 text-sm text-slate-300">API Access</div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 bg-background pt-16 pb-8">
+    <footer class="border-t border-white/10 bg-[#050508] pt-20 pb-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-1 md:col-span-2">
-                    <a href="#" class="font-display font-bold text-2xl tracking-tight flex items-center gap-2 mb-4">
-                        <img src="images/logo.png" alt="LifeMirror Logo" class="h-8 w-8">
+                    <a href="#" class="font-display font-bold text-2xl tracking-tight flex items-center gap-3 mb-6">
+                        <img src="images/logo.png" alt="LifeMirror Logo" class="h-10 w-10">
                         LifeMirror
                     </a>
-                    <p class="text-slate-400 max-w-sm mb-6">A deeply thoughtful product for understanding yourself. Developed with intention by PieApps.</p>
+                    <p class="text-slate-400 max-w-sm mb-8 leading-relaxed text-lg">A deeply thoughtful product for understanding yourself. Developed with intention by PieApps.</p>
                     <div class="flex gap-4">
-                        <a href="#download" class="border border-white/20 rounded-xl px-4 py-2 flex items-center gap-3 hover:bg-white/5 transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414C17.523 15.3414 16.0336 18.0664 13.9165 20.3551C12.9818 21.3653 11.0185 21.3653 10.0838 20.3551C7.9667 18.0664 6.47728 15.3414 6.47728 15.3414C4.85191 12.3394 5.37894 8.52989 7.8427 6.06613C10.1343 3.77457 13.866 3.77457 16.1576 6.06613C18.6213 8.52989 19.1484 12.3394 17.523 15.3414Z" opacity="0.5"/><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"/></svg>
+                        <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer" class="border border-white/20 rounded-2xl px-5 py-3 flex items-center gap-4 hover:bg-white/5 transition-colors">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414C17.523 15.3414 16.0336 18.0664 13.9165 20.3551C12.9818 21.3653 11.0185 21.3653 10.0838 20.3551C7.9667 18.0664 6.47728 15.3414 6.47728 15.3414C4.85191 12.3394 5.37894 8.52989 7.8427 6.06613C10.1343 3.77457 13.866 3.77457 16.1576 6.06613C18.6213 8.52989 19.1484 12.3394 17.523 15.3414Z" opacity="0.5"/><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"/></svg>
                             <div>
-                                <div class="text-[10px] text-slate-400 uppercase tracking-wide">Available on</div>
-                                <div class="text-sm font-semibold">Google Play</div>
+                                <div class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Available on</div>
+                                <div class="text-base font-bold text-white">Google Play</div>
                             </div>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-4">Product</h4>
-                    <ul class="space-y-3 text-slate-400 text-sm">
-                        <li><a href="#features" class="hover:text-accent transition-colors">Features</a></li>
+                    <h4 class="font-bold text-white text-lg mb-6">Product</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#features" class="hover:text-accent transition-colors">Insights</a></li>
                         <li><a href="#how-it-works" class="hover:text-accent transition-colors">How it Works</a></li>
-                        <li><a href="use-cases.html" class="hover:text-accent transition-colors">Use Cases</a></li>
                         <li><a href="#pricing" class="hover:text-accent transition-colors">Pricing</a></li>
-                        <li><a href="#demo" class="hover:text-accent transition-colors">Interactive Demo</a></li>
+                        <li><a href="#demo" class="hover:text-accent transition-colors">Experience</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-4">Company</h4>
-                    <ul class="space-y-3 text-slate-400 text-sm">
+                    <h4 class="font-bold text-white text-lg mb-6">Company</h4>
+                    <ul class="space-y-4 text-slate-400">
                         <li><a href="#" class="hover:text-accent transition-colors">About PieApps</a></li>
                         <li><a href="#" class="hover:text-accent transition-colors">Contact Support</a></li>
                         <li><a href="privacy.html" class="hover:text-accent transition-colors">Privacy Policy</a></li>
@@ -663,12 +502,12 @@ Automatically track routines, app usage, movement, and real-world context in the
                 </div>
             </div>
             
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
                 <p>&copy; 2026 PieApps. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="privacy.html" class="hover:text-white">Privacy</a>
-                    <a href="#" class="hover:text-white">Terms</a>
-                    <a href="#" class="hover:text-white">Cookies</a>
+                <div class="flex gap-8 mt-6 md:mt-0">
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
                 </div>
             </div>
         </div>
@@ -731,9 +570,10 @@ Automatically track routines, app usage, movement, and real-world context in the
             });
 
             // Hero Phone Mockup Floating Animation
-            gsap.to(".hero-mockup", {
-                y: -15,
+            gsap.to(".hero-mockup > div", {
+                y: -10,
                 duration: 2.5,
+                stagger: 0.2,
                 repeat: -1,
                 yoyo: true,
                 ease: "sine.inOut"

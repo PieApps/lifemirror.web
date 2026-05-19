@@ -6,54 +6,8 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>Privacy Policy | LifeMirror</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        background: '#0a0a0f',
-                        surface: 'rgba(255, 255, 255, 0.03)',
-                        surfaceBorder: 'rgba(255, 255, 255, 0.08)',
-                        accent: {
-                            light: '#a78bfa',
-                            DEFAULT: '#8b5cf6',
-                            dark: '#6d28d9',
-                        },
-                        secondary: {
-                            DEFAULT: '#3b82f6',
-                        }
-                    },
-                    animation: {
-                        'blob': 'blob 10s infinite alternate',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '100%': { transform: 'translate(30px, 50px) scale(1.1)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #0a0a0f;
-            color: #f8fafc;
-        }
-        
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-    </style>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="antialiased selection:bg-accent selection:text-white">
@@ -77,8 +31,8 @@
                 <a href="index.html#pricing" class="hover:text-white transition-colors">Pricing</a>
             </div>
             <div class="flex items-center gap-4">
-                <a href="index.html#download" class="hidden md:block text-sm font-medium text-slate-300 hover:text-white">Log in</a>
-                <a href="index.html#download" class="glass-panel px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/10 transition-colors">Get Early Access</a>
+                <a href="#" class="hidden md:block text-sm font-medium text-slate-300 hover:text-white">Log in</a>
+                <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer" class="glass-panel px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/10 transition-colors">Get Early Access</a>
             </div>
         </div>
     </nav>
@@ -194,7 +148,7 @@
                     </a>
                     <p class="text-slate-400 max-w-sm mb-6">A deeply thoughtful product for understanding yourself. Developed with intention by PieApps.</p>
                     <div class="flex gap-4">
-                        <a href="index.html#download" class="border border-white/20 rounded-xl px-4 py-2 flex items-center gap-3 hover:bg-white/5 transition-colors">
+                        <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer" class="border border-white/20 rounded-xl px-4 py-2 flex items-center gap-3 hover:bg-white/5 transition-colors">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414C17.523 15.3414 16.0336 18.0664 13.9165 20.3551C12.9818 21.3653 11.0185 21.3653 10.0838 20.3551C7.9667 18.0664 6.47728 15.3414 6.47728 15.3414C4.85191 12.3394 5.37894 8.52989 7.8427 6.06613C10.1343 3.77457 13.866 3.77457 16.1576 6.06613C18.6213 8.52989 19.1484 12.3394 17.523 15.3414Z" opacity="0.5"/><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"/></svg>
                             <div>
                                 <div class="text-[10px] text-slate-400 uppercase tracking-wide">Available on</div>
