@@ -21,3 +21,69 @@ body {
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #0a0a0f; }
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+/* Custom Scrollbar for Simulator viewport & log */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.01);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 99px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Smartphone screen notch reflection gloss */
+.phone-reflection::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Collapsible Raw Activity Log Transition */
+#sim-ddf-collapse-container {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out, padding 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#sim-ddf-collapse-container.expanded {
+    max-height: 400px;
+    opacity: 1;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Button transitions */
+.sim-preset-btn, .sim-tier-btn, .sim-profile-btn, .sim-view-btn {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sim-preset-btn:active, .sim-tier-btn:active, .sim-profile-btn:active, .sim-view-btn:active {
+    transform: scale(0.97);
+}
+
+/* Journey progression active states */
+#sim-journey-insight.active, #sim-journey-action.active {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+}
+#sim-journey-insight.active span, #sim-journey-action.active span {
+    border-color: currentColor;
+    background-color: rgba(139, 92, 246, 0.1);
+}
+#sim-journey-action.active span {
+    background-color: rgba(16, 185, 129, 0.1);
+}
+
