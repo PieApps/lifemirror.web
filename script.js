@@ -974,6 +974,70 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileBtns = document.querySelectorAll(".sim-profile-btn");
   const viewToggleBtns = document.querySelectorAll(".sim-view-btn");
   
+  // Mobile tab controls bindings
+  const tabControlsBtn = document.getElementById("sim-tab-controls");
+  const tabPreviewBtn = document.getElementById("sim-tab-preview");
+  const panelControls = document.getElementById("sim-panel-controls");
+  const panelPreview = document.getElementById("sim-panel-preview");
+  const tabNotification = document.getElementById("sim-tab-notification");
+  const tabNotificationDot = document.getElementById("sim-tab-notification-dot");
+  
+  let activeMobileTab = "controls";
+
+  function switchMobileTab(tab) {
+    activeMobileTab = tab;
+    if (!tabControlsBtn || !tabPreviewBtn || !panelControls || !panelPreview) return;
+    
+    if (tab === "controls") {
+      tabControlsBtn.classList.add("active", "bg-white/10", "text-white");
+      tabControlsBtn.classList.remove("text-slate-400");
+      tabPreviewBtn.classList.remove("active", "bg-white/10", "text-white");
+      tabPreviewBtn.classList.add("text-slate-400");
+      
+      panelControls.classList.remove("hidden");
+      panelPreview.classList.add("hidden");
+    } else {
+      tabPreviewBtn.classList.add("active", "bg-white/10", "text-white");
+      tabPreviewBtn.classList.remove("text-slate-400");
+      tabControlsBtn.classList.remove("active", "bg-white/10", "text-white");
+      tabControlsBtn.classList.add("text-slate-400");
+      
+      panelControls.classList.add("hidden");
+      panelPreview.classList.remove("hidden");
+      
+      hideNotificationDot();
+    }
+  }
+
+  if (tabControlsBtn) {
+    tabControlsBtn.addEventListener("click", () => switchMobileTab("controls"));
+  }
+  if (tabPreviewBtn) {
+    tabPreviewBtn.addEventListener("click", () => switchMobileTab("preview"));
+  }
+
+  function showNotificationDot() {
+    if (activeMobileTab === "controls" && window.innerWidth < 1024) {
+      if (tabNotification) tabNotification.classList.remove("hidden");
+      if (tabNotificationDot) tabNotificationDot.classList.remove("hidden");
+    }
+  }
+
+  function hideNotificationDot() {
+    if (tabNotification) tabNotification.classList.add("hidden");
+    if (tabNotificationDot) tabNotificationDot.classList.add("hidden");
+  }
+
+  window.addEventListener("resize", () => {
+    if (!panelControls || !panelPreview) return;
+    if (window.innerWidth >= 1024) {
+      panelControls.classList.remove("hidden");
+      panelPreview.classList.remove("hidden");
+    } else {
+      switchMobileTab(activeMobileTab);
+    }
+  });
+  
   const ddfContent = document.getElementById("sim-ddf-content");
   const ddfCollapseBtn = document.getElementById("sim-ddf-collapse-btn");
   const ddfCollapseContainer = document.getElementById("sim-ddf-collapse-container");
@@ -1083,6 +1147,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const preset = SIMULATOR_DATA.presets[currentPreset];
     const rules = SIMULATOR_DATA.tierRules[currentTier];
     const response = preset.tiers[currentTier][currentProfile];
+
+    if (animate) {
+      showNotificationDot();
+    }
 
     // Update raw input text
     if (ddfContent) {

@@ -352,25 +352,35 @@
             <div class="text-center mb-16 gs-reveal">
                 <span class="text-accent font-semibold tracking-wider uppercase text-sm mb-3 block">Live Simulator</span>
                 <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">Passive Tracking, Active Understanding</h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Experience how LifeMirror automatically decodes your raw daily telemetry into deeply personalized, actionable reflections.</p>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Experience how LifeMirror automatically decodes your raw daily telemetry into deeply personalized, actionab            <!-- Mobile Segmented Tab Bar (Visible only on < lg) -->
+            <div class="lg:hidden w-full max-w-[360px] mx-auto mb-8 bg-white/5 border border-white/10 rounded-2xl p-1 flex relative">
+                <button id="sim-tab-controls" class="sim-tab-btn active w-1/2 text-xs font-bold py-3 rounded-xl bg-white/10 text-white transition-all cursor-pointer flex items-center justify-center gap-1.5">
+                    <span>⚙️</span> Configure
+                </button>
+                <button id="sim-tab-preview" class="sim-tab-btn w-1/2 text-xs font-bold py-3 rounded-xl text-slate-400 hover:text-white transition-all cursor-pointer flex items-center justify-center gap-1.5 relative">
+                    <span>📱</span> View Reflection
+                    <!-- Pulsing notification dot -->
+                    <span id="sim-tab-notification" class="absolute top-2 right-2 w-2 h-2 bg-accent rounded-full animate-ping hidden"></span>
+                    <span id="sim-tab-notification-dot" class="absolute top-2 right-2 w-2 h-2 bg-accent rounded-full hidden"></span>
+                </button>
             </div>
 
             <div class="grid lg:grid-cols-12 gap-12 items-start">
                 <!-- Left Panel: Controls -->
-                <div class="lg:col-span-7 flex flex-col gap-8 gs-reveal text-left">
+                <div id="sim-panel-controls" class="lg:col-span-7 flex flex-col gap-8 gs-reveal text-left w-full">
                     <!-- Preset Selection -->
                     <div class="glass-panel p-6 rounded-3xl border border-white/5 bg-white/2">
                         <h3 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2">
                             <span class="text-accent">📅</span> 1. Select a Day Scenario
                         </h3>
-                        <div class="flex flex-wrap gap-3">
-                            <button class="sim-preset-btn active border border-white px-5 py-3 rounded-2xl text-sm font-semibold text-black bg-white transition-all cursor-pointer shadow-md" data-preset="friction">
+                        <div class="flex overflow-x-auto gap-3 pb-2 scrollbar-none snap-x -mx-6 px-6 sm:mx-0 sm:px-0 lg:flex-wrap">
+                            <button class="sim-preset-btn active border border-white px-5 py-3 rounded-2xl text-sm font-semibold text-black bg-white transition-all cursor-pointer shadow-md shrink-0 snap-start" data-preset="friction">
                                 Distracted Workday
                             </button>
-                            <button class="sim-preset-btn border border-white/10 px-5 py-3 rounded-2xl text-sm font-semibold text-slate-400 bg-white/5 hover:bg-white/10 hover:text-white transition-all cursor-pointer" data-preset="flow">
+                            <button class="sim-preset-btn border border-white/10 px-5 py-3 rounded-2xl text-sm font-semibold text-slate-400 bg-white/5 hover:bg-white/10 hover:text-white transition-all cursor-pointer shrink-0 snap-start" data-preset="flow">
                                 Peak Flow Saturday
                             </button>
-                            <button class="sim-preset-btn border border-white/10 px-5 py-3 rounded-2xl text-sm font-semibold text-slate-400 bg-white/5 hover:bg-white/10 hover:text-white transition-all cursor-pointer" data-preset="burnout">
+                            <button class="sim-preset-btn border border-white/10 px-5 py-3 rounded-2xl text-sm font-semibold text-slate-400 bg-white/5 hover:bg-white/10 hover:text-white transition-all cursor-pointer shrink-0 snap-start" data-preset="burnout">
                                 Meetings Burnout
                             </button>
                         </div>
@@ -397,20 +407,20 @@
                             </h3>
                             <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500">Value Progression</span>
                         </div>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
-                            <button class="sim-tier-btn border border-white/5 bg-white/2 text-slate-400 px-4 py-3 rounded-2xl text-xs font-bold transition-all cursor-pointer flex flex-col items-center justify-center gap-1 hover:border-white/20" data-tier="guest">
+                        <div class="flex overflow-x-auto gap-3 pb-2 scrollbar-none snap-x -mx-6 px-6 sm:mx-0 sm:px-0 mb-5 sm:grid sm:grid-cols-4 sm:gap-3">
+                            <button class="sim-tier-btn border border-white/5 bg-white/2 text-slate-400 px-4 py-3 rounded-2xl text-xs font-bold transition-all cursor-pointer flex flex-col items-center justify-center gap-1 hover:border-white/20 shrink-0 w-[110px] sm:w-auto snap-start" data-tier="guest">
                                 <span>Guest</span>
                                 <span class="text-[9px] font-normal opacity-60">Narrator only</span>
                             </button>
-                            <button class="sim-tier-btn border border-white/5 bg-white/2 text-slate-400 px-4 py-3 rounded-2xl text-xs font-bold transition-all cursor-pointer flex flex-col items-center justify-center gap-1 hover:border-white/20" data-tier="free">
+                            <button class="sim-tier-btn border border-white/5 bg-white/2 text-slate-400 px-4 py-3 rounded-2xl text-xs font-bold transition-all cursor-pointer flex flex-col items-center justify-center gap-1 hover:border-white/20 shrink-0 w-[110px] sm:w-auto snap-start" data-tier="free">
                                 <span>Free</span>
                                 <span class="text-[9px] font-normal opacity-60">+ Emojis</span>
                             </button>
-                            <button class="sim-tier-btn border border-white/5 bg-white/2 text-slate-400 px-4 py-3 rounded-2xl text-xs font-bold transition-all cursor-pointer flex flex-col items-center justify-center gap-1 hover:border-white/20" data-tier="pro">
+                            <button class="sim-tier-btn border border-white/5 bg-white/2 text-slate-400 px-4 py-3 rounded-2xl text-xs font-bold transition-all cursor-pointer flex flex-col items-center justify-center gap-1 hover:border-white/20 shrink-0 w-[110px] sm:w-auto snap-start" data-tier="pro">
                                 <span>Pro</span>
                                 <span class="text-[9px] font-normal opacity-60">+ Patterns</span>
                             </button>
-                            <button class="sim-tier-btn active border border-accent bg-accent/10 text-white px-4 py-3 rounded-2xl text-xs font-bold transition-all cursor-pointer flex flex-col items-center justify-center gap-1 shadow-lg shadow-accent/15" data-tier="ai_plus">
+                            <button class="sim-tier-btn active border border-accent bg-accent/10 text-white px-4 py-3 rounded-2xl text-xs font-bold transition-all cursor-pointer flex flex-col items-center justify-center gap-1 shadow-lg shadow-accent/15 shrink-0 w-[110px] sm:w-auto snap-start" data-tier="ai_plus">
                                 <span>AI+ Plus</span>
                                 <span class="text-[9px] font-normal opacity-80">+ Full Coach</span>
                             </button>
@@ -430,20 +440,20 @@
                         <h3 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2">
                             <span class="text-accent">🧠</span> 3. Select an AI Lens Profile
                         </h3>
-                        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
-                            <button class="sim-profile-btn border border-white/5 text-slate-400 px-3 py-3 rounded-2xl text-xs font-semibold bg-transparent transition-all cursor-pointer" data-profile="narrator">
+                        <div class="flex overflow-x-auto gap-3 pb-2 scrollbar-none snap-x -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-5 sm:gap-3">
+                            <button class="sim-profile-btn border border-white/5 text-slate-400 px-3 py-3 rounded-2xl text-xs font-semibold bg-transparent transition-all cursor-pointer shrink-0 w-[100px] sm:w-auto snap-start" data-profile="narrator">
                                 Narrator
                             </button>
-                            <button class="sim-profile-btn border border-white/5 text-slate-400 px-3 py-3 rounded-2xl text-xs font-semibold bg-transparent transition-all cursor-pointer" data-profile="reflector">
+                            <button class="sim-profile-btn border border-white/5 text-slate-400 px-3 py-3 rounded-2xl text-xs font-semibold bg-transparent transition-all cursor-pointer shrink-0 w-[100px] sm:w-auto snap-start" data-profile="reflector">
                                 Reflector
                             </button>
-                            <button class="sim-profile-btn border border-white/5 text-slate-400 px-3 py-3 rounded-2xl text-xs font-semibold bg-transparent transition-all cursor-pointer" data-profile="analyst">
+                            <button class="sim-profile-btn border border-white/5 text-slate-400 px-3 py-3 rounded-2xl text-xs font-semibold bg-transparent transition-all cursor-pointer shrink-0 w-[100px] sm:w-auto snap-start" data-profile="analyst">
                                 Analyst
                             </button>
-                            <button class="sim-profile-btn border border-white/5 text-slate-400 px-3 py-3 rounded-2xl text-xs font-semibold bg-transparent transition-all cursor-pointer" data-profile="reflection_mirror">
+                            <button class="sim-profile-btn border border-white/5 text-slate-400 px-3 py-3 rounded-2xl text-xs font-semibold bg-transparent transition-all cursor-pointer shrink-0 w-[100px] sm:w-auto snap-start" data-profile="reflection_mirror">
                                 Mirror
                             </button>
-                            <button class="sim-profile-btn active border border-secondary bg-secondary/15 text-white px-3 py-3 rounded-2xl text-xs font-semibold transition-all cursor-pointer" data-profile="coach">
+                            <button class="sim-profile-btn active border border-secondary bg-secondary/15 text-white px-3 py-3 rounded-2xl text-xs font-semibold transition-all cursor-pointer shrink-0 w-[100px] sm:w-auto snap-start" data-profile="coach">
                                 Coach
                             </button>
                         </div>
@@ -451,7 +461,7 @@
                 </div>
 
                 <!-- Right Panel: Smartphone Viewport -->
-                <div class="lg:col-span-5 flex flex-col gap-6 items-center gs-reveal">
+                <div id="sim-panel-preview" class="lg:col-span-5 hidden lg:flex flex-col gap-6 items-center gs-reveal w-full">
                     <!-- View toggle selector & Journey indicator -->
                     <div class="w-full max-w-[360px] flex flex-col gap-4">
                         <div class="flex justify-between items-center bg-white/5 border border-white/10 rounded-2xl p-1">

@@ -87,3 +87,21 @@ body {
     background-color: rgba(16, 185, 129, 0.1);
 }
 
+/* Hide scrollbars for chrome/safari and firefox while keeping scroll behavior */
+.scrollbar-none {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+.scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Webkit */
+}
+
+/* Smooth tab selector transition */
+.sim-tab-btn {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sim-tab-btn:active {
+    transform: scale(0.97);
+}
+
+
