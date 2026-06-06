@@ -1294,4 +1294,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Run initial state update
   updateSimulatorUI(false);
+
+  // --- Demo Video Modal Interaction ---
+  const videoModal = document.getElementById("demo-video-modal");
+  const videoTrigger = document.getElementById("demo-video-trigger");
+  const closeModalBtn = document.getElementById("close-modal-btn");
+  const videoIframe = document.getElementById("demo-video-iframe");
+  const videoLoader = document.getElementById("video-loader");
+  const modalContainer = document.getElementById("modal-container");
+
+  const videoUrl = "https://www.youtube.com/embed/1Gnin-DEIg0?autoplay=1&mute=0&rel=0&modestbranding=1";
+
+  if (videoModal && videoTrigger && closeModalBtn && videoIframe && videoLoader && modalContainer) {
+    // Open modal
+    videoTrigger.addEventListener("click", () => {
+      // Show loader and reset iframe load state
+      videoLoader.style.opacity = "1";
+      videoLoader.classList.remove("pointer-events-none");
+      
+      // Set source to load the video and trigger autoplay
+      videoIframe.src = videoUrl;
+      
+      // Fade in backdrop
+      videoModal.classList.remove("opacity-0", "pointer-events-none");
+      videoModal.classList.add("opacity-100", "pointer-events-auto");
+      
+      // Scale up container
+      modalContainer.classList.remove("scale-95", "translate-y-4");
+      modalContainer.classList.add("scale-100", "translate-y-0");
+      
+      // Lock scroll
+      document.body.style.overflow = "hidden";
+    });
+
+    // Hide loader once the iframe finishes loading
+    videoIframe.addEventListener("load", () => {
+      videoLoader.style.opacity = "0";
+      videoLoader.classList.add("pointer-events-none");
+    });
+
+    // Close modal function
+    const closeModal = () => {
+      // Fade out backdrop
+      videoModal.classList.remove("opacity-100", "pointer-events-auto");
+      videoModal.classList.add("opacity-0", "pointer-events-none");
+      
+      // Scale down container
+      modalContainer.classList.remove("scale-100", "translate-y-0");
+      modalContainer.classList.add("scale-95", "translate-y-4");
+      
+      // Stop video by clearing the iframe src
+      videoIframe.src = "";
+      
+      // Restore scroll
+      document.body.style.overflow = "";
+    };
+
+    // Close on click buttons
+    closeModalBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeModal();
+    });
+
+    // Close on clicking backdrop (outside container)
+    videoModal.addEventListener("click", (e) => {
+      if (e.target === videoModal) {
+        closeModal();
+      }
+    });
+
+    // Close on Escape key press
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !videoModal.classList.contains("pointer-events-none")) {
+        closeModal();
+      }
+    });
+  }
 });
+

@@ -565,7 +565,7 @@
                 <p class="text-slate-400 max-w-2xl mx-auto text-xl">Watch how LifeMirror seamlessly turns your daily behavior into meaningful personal insights.</p>
             </div>
             
-            <div class="relative rounded-[2.5rem] overflow-hidden glass-panel border border-white/10 aspect-video group cursor-pointer shadow-[0_0_60px_rgba(139,92,246,0.15)] gs-reveal transition-transform hover:scale-[1.01] duration-500">
+            <div id="demo-video-trigger" class="relative rounded-[2.5rem] overflow-hidden glass-panel border border-white/10 aspect-video group cursor-pointer shadow-[0_0_60px_rgba(139,92,246,0.15)] gs-reveal transition-transform hover:scale-[1.01] duration-500">
                 <!-- Placeholder for video -->
                 <div class="absolute inset-0 bg-slate-900/90 flex flex-col items-center justify-center p-8 text-center">
                     <div class="w-24 h-24 rounded-full bg-accent/20 flex items-center justify-center backdrop-blur-md group-hover:scale-110 group-hover:bg-accent/30 transition-all duration-300 border border-accent/50 mb-10 shadow-[0_0_30px_rgba(139,92,246,0.3)]">
@@ -794,6 +794,35 @@
             });
         });
     </script>
+    <!-- Video Lightbox Modal -->
+    <div id="demo-video-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+        <!-- Close button (outside modal frame on tablet/desktop, inside on mobile) -->
+        <button id="close-modal-btn" class="absolute top-6 right-6 text-slate-400 hover:text-white hover:scale-105 p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-200 z-50 cursor-pointer shadow-lg" aria-label="Close video">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+
+        <!-- Modal Content Container -->
+        <div id="modal-container" class="relative w-full max-w-[360px] aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 bg-black/60 shadow-[0_0_50px_rgba(139,92,246,0.25)] transform scale-95 translate-y-4 transition-all duration-300">
+            <!-- Loading indicator -->
+            <div id="video-loader" class="absolute inset-0 flex items-center justify-center bg-slate-950/80 z-10 transition-opacity duration-300">
+                <div class="relative flex h-10 w-10">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-10 w-10 bg-accent/30 border border-accent flex items-center justify-center">
+                        <svg class="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+
+            <!-- YouTube Iframe Slot -->
+            <iframe id="demo-video-iframe" class="w-full h-full object-cover" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
