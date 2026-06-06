@@ -104,4 +104,46 @@ body {
     transform: scale(0.97);
 }
 
+/* Automation Card Visuals & Animations */
+
+.app-mapping-visual, .call-tracking-visual, .activity-recognition-visual {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.group:hover .app-mapping-visual {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.15), 0 8px 10px -6px rgba(139, 92, 246, 0.15);
+}
+
+.group:hover .call-tracking-visual {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15), 0 8px 10px -6px rgba(59, 130, 246, 0.15);
+}
+
+.group:hover .activity-recognition-visual {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15), 0 8px 10px -6px rgba(16, 185, 129, 0.15);
+}
+
+@keyframes call-wiggle {
+    0% { transform: rotate(0deg) scale(1); }
+    10% { transform: rotate(-15deg) scale(1.1); }
+    25% { transform: rotate(15deg) scale(1.1); }
+    40% { transform: rotate(-15deg) scale(1.1); }
+    55% { transform: rotate(15deg) scale(1.1); }
+    70% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+.call-ring-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.group:hover .call-ring-container {
+    animation: call-wiggle 1.2s ease-in-out infinite;
+}
+
+
 
