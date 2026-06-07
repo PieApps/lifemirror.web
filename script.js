@@ -1028,7 +1028,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (tabNotificationDot) tabNotificationDot.classList.add("hidden");
   }
 
-  window.addEventListener("resize", () => {
+  function handleLayout() {
     if (!panelControls || !panelPreview) return;
     if (window.innerWidth >= 1024) {
       panelControls.classList.remove("hidden");
@@ -1036,7 +1036,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       switchMobileTab(activeMobileTab);
     }
-  });
+  }
+
+  window.addEventListener("resize", handleLayout);
+  handleLayout();
   
   const ddfContent = document.getElementById("sim-ddf-content");
   const ddfCollapseBtn = document.getElementById("sim-ddf-collapse-btn");
