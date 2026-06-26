@@ -1102,29 +1102,12 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.classList.add("active", "border-accent", "bg-accent/10", "text-white");
       btn.classList.remove("border-white/5", "bg-white/2", "text-slate-400");
       
-      // Update capabilities view & adjust profiles
-      const allowed = SIMULATOR_DATA.tierRules[currentTier].allowedProfiles;
-      
-      // If current profile is not allowed under the new tier, switch to the first allowed one
-      if (!allowed.includes(currentProfile)) {
-        currentProfile = allowed[allowed.length - 1]; // Select the highest profile
-      }
       
       updateSimulatorUI(true);
     });
   });
 
-  // Bind Profile selections
-  profileBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const prof = btn.getAttribute("data-profile");
-      const allowed = SIMULATOR_DATA.tierRules[currentTier].allowedProfiles;
-      if (!allowed.includes(prof)) return; // Disabled
 
-      currentProfile = prof;
-      updateSimulatorUI(true);
-    });
-  });
 
   // Bind View Mode (UI vs JSON)
   viewToggleBtns.forEach(btn => {
@@ -1147,9 +1130,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Main UI update engine
   function updateSimulatorUI(animate = false) {
+    let overrideProfile = "narrator";
+    if (currentTier === "pro") overrideProfile = "analyst";
+    if (currentTier === "ai_plus") overrideProfile = "coach";
+
     const preset = SIMULATOR_DATA.presets[currentPreset];
     const rules = SIMULATOR_DATA.tierRules[currentTier];
-    const response = preset.tiers[currentTier][currentProfile];
+    const response = preset.tiers[currentTier][overrideProfile];
 
     if (animate) {
       showNotificationDot();
@@ -1160,28 +1147,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ddfContent.textContent = preset.ddf;
     }
 
-    // Update profile button statuses (enable/disable based on Tier rules)
-    profileBtns.forEach(btn => {
-      const p = btn.getAttribute("data-profile");
-      const isAllowed = rules.allowedProfiles.includes(p);
-      
-      if (isAllowed) {
-        btn.classList.remove("opacity-30", "cursor-not-allowed", "bg-transparent");
-        btn.removeAttribute("disabled");
-        if (p === currentProfile) {
-          btn.classList.add("border-secondary", "bg-secondary/15", "text-white");
-          btn.classList.remove("border-white/5", "text-slate-400");
-        } else {
-          btn.classList.remove("border-secondary", "bg-secondary/15", "text-white");
-          btn.classList.add("border-white/5", "text-slate-400");
-        }
-      } else {
-        btn.classList.add("opacity-30", "cursor-not-allowed");
-        btn.classList.remove("border-secondary", "bg-secondary/15", "text-white");
-        btn.classList.add("border-white/5", "text-slate-400");
-        btn.setAttribute("disabled", "true");
-      }
-    });
+
 
     // Update Tier Capability indicators in control panel
     updateTierIndicators(rules);
