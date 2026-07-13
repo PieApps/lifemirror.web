@@ -1,9 +1,12 @@
 const SIMULATOR_DATA = {
   presets: {
     friction: {
-      name: "The Distracted Developer Day",
+      name: '"Why did I lose focus this morning?"',
       description: "A workday showing how high meeting stress triggers post-meeting distraction.",
-      ddf: `[ACTIVITY_LOG]
+      ddf: `[QUESTION]
+"Why did I lose focus this morning?"
+
+[ACTIVITY_LOG]
 @2026-05-30|Sleep:7.5h(😴)|Coding:1.5h(🔥)|Meetings:1.0h(😤)|Distraction:0.5h(😵)|Coding:2.0h(🔥)|Running:0.75h(🚀)|Personal:2.0h(😌)
 
 [TOTALS]
@@ -43,7 +46,7 @@ personal - Running:0.75h/0.5h (MET)`,
         free: {
           narrator: {
             json: {
-              "answer": "Your day began after waking up from a tired sleep (😴) of 7.5 hours. You jumped straight into coding with a focused state (🔥) for 1.5 hours, but this was interrupted by a stressed (😤) 1.0-hour meeting. You experienced a distracted (😵) 0.5-hour period before recovering your focus (🔥) for 2.0 hours of coding. Later, you felt motivated (🚀) during a 0.75-hour run, and wrapped up with a calm (😌) 2.0 hours of personal time.",
+              "answer": "Based on your data, you coded for 1.5 hours with high focus (🔥), but this was interrupted by a stressed (😤) 1.0-hour meeting. This was immediately followed by a 0.5-hour distracted (😵) period before you recovered your focus.",
               "suggestedIntentions": [
                 {
                   "modeKey": "work",
@@ -55,7 +58,7 @@ personal - Running:0.75h/0.5h (MET)`,
               ]
             },
             ui: {
-              mainResponse: "Your day began after waking up from a tired sleep (😴) of 7.5 hours. You jumped straight into coding with a focused state (🔥) for 1.5 hours, but this was interrupted by a stressed (😤) 1.0-hour meeting. You experienced a distracted (😵) 0.5-hour period before recovering your focus (🔥) for 2.0 hours of coding. Later, you felt motivated (🚀) during a 0.75-hour run, and wrapped up with a calm (😌) 2.0 hours of personal time.",
+              mainResponse: "Based on your data, you coded for 1.5 hours with high focus (🔥), but this was interrupted by a stressed (😤) 1.0-hour meeting. This was immediately followed by a 0.5-hour distracted (😵) period before you recovered your focus.",
               suggestedIntentions: [
                 { modeKey: "work", subTag: "Coding", target: "4h 0m / Daily", reason: "Maintain your coding routine." }
               ]
@@ -133,8 +136,8 @@ personal - Running:0.75h/0.5h (MET)`,
           },
           analyst: {
             json: {
-              "answer": "You logged 14.75 total tracked hours today. 3.5 hours (24%) were allocated to Coding, 1.0 hour (7%) to Meetings, 0.5 hours (3%) to Distraction, 0.75 hours (5%) to Running, 2.0 hours (13.5%) to Personal time, and 7.5 hours (50.5%) to Sleep.",
-              "insight": "Coding sessions logged high focus levels (🔥) but distraction (😵) occurred immediately post-meetings, highlighting a transition friction point.",
+              "answer": "You lost focus immediately after your 1.0-hour meeting.",
+              "insight": "Your data shows that your coding sessions had high focus (🔥), but the meeting introduced stress (😤), creating a transition friction point that led to 30 minutes of distraction (😵).",
               "suggestion": "Schedule a 10-minute buffer after meetings to reduce transition distraction.",
               "suggestedIntentions": [
                 {
@@ -147,8 +150,8 @@ personal - Running:0.75h/0.5h (MET)`,
               ]
             },
             ui: {
-              mainResponse: "You logged 14.75 total tracked hours today. 3.5 hours (24%) were allocated to Coding, 1.0 hour (7%) to Meetings, 0.5 hours (3%) to Distraction, 0.75 hours (5%) to Running, 2.0 hours (13.5%) to Personal time, and 7.5 hours (50.5%) to Sleep.",
-              insight: "Coding sessions logged high focus levels (🔥) but distraction (😵) occurred immediately post-meetings, highlighting a transition friction point.",
+              mainResponse: "You lost focus immediately after your 1.0-hour meeting.",
+              insight: "Your data shows that your coding sessions had high focus (🔥), but the meeting introduced stress (😤), creating a transition friction point that led to 30 minutes of distraction (😵).",
               suggestion: "Schedule a 10-minute buffer after meetings to reduce transition distraction.",
               suggestedIntentions: [
                 { modeKey: "work", subTag: "Coding", target: "4h 0m / Daily", reason: "Reach daily goal of 4 hours." }
@@ -279,9 +282,9 @@ personal - Running:0.75h/0.5h (MET)`,
           },
           coach: {
             json: {
-              "answer": "You put in solid work today, hitting 3.5 hours of coding and a motivated run. However, you missed your Coding target by 30 minutes, primarily due to a 30-minute distraction gap that formed immediately after your stressful meeting.",
+              "answer": "Your focus was derailed by the meeting because it spiked your stress levels.",
               "insight": "Your data reveals a clear psychological pattern: when collaborative meetings spike your stress levels (😤), you unconsciously seek dopamine relief via short distraction sessions (😵). Resolving this transition friction is the key to hitting your focus targets consistently.",
-              "suggestion": "1. Protect your morning coding window by moving meetings to the afternoon.\n2. Implement a 5-minute deep-breathing habit immediately post-meeting to reset your nervous system.\n3. Log a 'declutter' session of 5 minutes instead of falling into distraction.",
+              "suggestion": "Protect your morning coding window by moving meetings to the afternoon. Implement a 5-minute deep-breathing habit immediately post-meeting to reset your nervous system.",
               "suggestedIntentions": [
                 {
                   "modeKey": "work",
@@ -300,9 +303,9 @@ personal - Running:0.75h/0.5h (MET)`,
               ]
             },
             ui: {
-              mainResponse: "You put in solid work today, hitting 3.5 hours of coding and a motivated run. However, you missed your Coding target by 30 minutes, primarily due to a 30-minute distraction gap that formed immediately after your stressful meeting.",
+              mainResponse: "Your focus was derailed by the meeting because it spiked your stress levels.",
               insight: "Your data reveals a clear psychological pattern: when collaborative meetings spike your stress levels (😤), you unconsciously seek dopamine relief via short distraction sessions (😵). Resolving this transition friction is the key to hitting your focus targets consistently.",
-              suggestion: "1. Protect your morning coding window by moving meetings to the afternoon.\n2. Implement a 5-minute deep-breathing habit immediately post-meeting to reset your nervous system.\n3. Log a 'declutter' session of 5 minutes instead of falling into distraction.",
+              suggestion: "Protect your morning coding window by moving meetings to the afternoon. Implement a 5-minute deep-breathing habit immediately post-meeting to reset your nervous system.",
               suggestedIntentions: [
                 { modeKey: "work", subTag: "Coding", target: "4h 0m / Daily", reason: "Optimize energy for high-priority tasks." },
                 { modeKey: "personal", subTag: "Breathing Reset", target: "5m / Daily", reason: "De-escalate nervous system stress after syncs." }
@@ -1070,12 +1073,12 @@ document.addEventListener("DOMContentLoaded", () => {
         ddfCollapseContainer.classList.add("expanded", "p-4");
         ddfCollapseContainer.classList.remove("pointer-events-none");
         ddfCollapseIcon.style.transform = "rotate(180deg)";
-        ddfCollapseBtn.querySelector(".btn-text").textContent = "Hide Raw Activity Log";
+        ddfCollapseBtn.querySelector(".btn-text").textContent = "Hide Question & Data";
       } else {
         ddfCollapseContainer.classList.remove("expanded", "p-4");
         ddfCollapseContainer.classList.add("pointer-events-none");
         ddfCollapseIcon.style.transform = "rotate(0deg)";
-        ddfCollapseBtn.querySelector(".btn-text").textContent = "Show Raw Activity Log";
+        ddfCollapseBtn.querySelector(".btn-text").textContent = "View Question & Data";
       }
     });
   }
