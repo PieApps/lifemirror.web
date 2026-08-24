@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Terms of Service | LifeMirror</title>
+    <meta name="description" content="Read the Terms of Service for LifeMirror — the AI behavior-tracking app by PieApps. Understand your rights, beta feature disclaimers, pricing, and more.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ── Theme tokens ── */
+        :root {
+            --bg-page:     #07070f;
+            --bg-card:     rgba(255,255,255,0.04);
+            --border-card: rgba(255,255,255,0.08);
+            --text-primary: #f1f5f9;
+            --text-muted:   #94a3b8;
+            --text-strong:  #ffffff;
+            --accent-rgb: 139, 92, 246;
+        }
+        html.light {
+            --bg-page:     #f4f4f8;
+            --bg-card:     rgba(255,255,255,0.75);
+            --border-card: rgba(0,0,0,0.08);
+            --text-primary: #1e293b;
+            --text-muted:   #475569;
+            --text-strong:  #0f172a;
+        }
+
+        body { background-color: var(--bg-page); color: var(--text-primary); transition: background-color .3s, color .3s; }
+
+        /* Backdrop blobs */
+        .blob { position:fixed; border-radius:50%; filter:blur(120px); pointer-events:none; z-index:-10; mix-blend-mode:screen; }
+        html.light .blob { mix-blend-mode: multiply; opacity: .35; }
+
+        /* Glassmorphism card */
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            transition: background .3s, border-color .3s;
+        }
+        html.light .glass-card { box-shadow: 0 8px 32px rgba(0,0,0,.08); }
+
+        /* Navbar glass */
+        .nav-glass {
+            background: rgba(7,7,15,0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        html.light .nav-glass {
+            background: rgba(244,244,248,0.80);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        /* Section headings */
+        .section-heading {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: rgb(var(--accent-rgb));
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .section-heading::before {
+            content: '';
+            display: inline-block;
+            width: 3px;
+            height: 1.1em;
+            border-radius: 2px;
+            background: rgb(var(--accent-rgb));
+            flex-shrink: 0;
+        }
+
+        /* Badge */
+        .badge-beta {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            padding: .2rem .65rem;
+            border-radius: 999px;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            background: rgba(249,115,22,.15);
+            border: 1px solid rgba(249,115,22,.35);
+            color: #fb923c;
+        }
+        .badge-pro {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            padding: .2rem .65rem;
+            border-radius: 999px;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            background: rgba(245,158,11,.15);
+            border: 1px solid rgba(245,158,11,.35);
+            color: #fbbf24;
+        }
+
+        /* Beta disclaimer box */
+        .disclaimer-box {
+            border-left: 3px solid rgb(249,115,22);
+            background: rgba(249,115,22,.07);
+            border-radius: 0 .75rem .75rem 0;
+            padding: .85rem 1rem;
+        }
+        html.light .disclaimer-box { background: rgba(249,115,22,.1); }
+
+        /* TOC sidebar */
+        .toc-link {
+            display: block;
+            font-size: .82rem;
+            padding: .3rem .6rem;
+            border-radius: .4rem;
+            color: var(--text-muted);
+            transition: background .2s, color .2s;
+            text-decoration: none;
+        }
+        .toc-link:hover, .toc-link.active {
+            background: rgba(var(--accent-rgb),.12);
+            color: rgb(var(--accent-rgb));
+        }
+
+        /* Theme toggle */
+        #theme-toggle {
+            cursor: pointer;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            transition: background .2s, border-color .2s;
+            color: var(--text-primary);
+        }
+        #theme-toggle:hover { background: rgba(var(--accent-rgb),.15); }
+
+        /* Body text */
+        .body-text { color: var(--text-muted); line-height: 1.75; }
+        .strong-text { color: var(--text-strong); }
+
+        /* Divider */
+        .section-divider { border-color: var(--border-card); }
+
+        /* Prose list */
+        .prose-list { list-style: disc; padding-left: 1.4rem; }
+        .prose-list li { margin-bottom: .45rem; color: var(--text-muted); line-height: 1.7; }
+        .prose-list li strong { color: var(--text-strong); }
+
+        /* Table */
+        .plan-table th { color: var(--text-strong); border-bottom: 1px solid var(--border-card); padding: .65rem 1rem; text-align: left; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; }
+        .plan-table td { padding: .65rem 1rem; font-size: .9rem; color: var(--text-muted); border-bottom: 1px solid rgba(255,255,255,.04); }
+        html.light .plan-table td { border-bottom: 1px solid rgba(0,0,0,.05); }
+        .plan-table tr:last-child td { border-bottom: none; }
+
+        @media (max-width: 1023px) { .toc-sidebar { display: none; } }
+    </style>
+</head>
+<body class="antialiased selection:bg-violet-500 selection:text-white">
+
+    <!-- Background Blobs -->
+    <div class="blob top-[-15%] left-[-8%] w-[550px] h-[550px] bg-violet-600/20"></div>
+    <div class="blob bottom-[-15%] right-[-8%] w-[450px] h-[450px] bg-indigo-500/15" style="animation-delay:-4s"></div>
+
+    <!-- Navigation -->
+    <nav class="nav-glass fixed w-full z-50 py-3">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="font-display font-bold text-xl tracking-tight flex items-center gap-2">
+                <img src="images/logo.png" alt="LifeMirror Logo" class="h-8 w-8">
+                <span class="strong-text">LifeMirror</span>
+            </a>
+            <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-300">
+                <a href="index.html#how-it-works" class="hover:text-white transition-colors">How It Works</a>
+                <a href="index.html#features" class="hover:text-white transition-colors">Features</a>
+                <a href="index.html#demo" class="hover:text-white transition-colors">Demo</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+                    <svg id="icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
+                    </svg>
+                    <svg id="icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                </button>
+                <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer"
+                   class="glass-card px-5 py-2 rounded-full text-sm font-semibold hover:opacity-80 transition-opacity">
+                    Get the App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <main class="pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Page Header -->
+            <div class="mb-12 text-center max-w-2xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-xs font-semibold text-violet-400 mb-5">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+                    </span>
+                    Legal Document
+                </div>
+                <h1 class="font-display text-4xl md:text-5xl font-extrabold tracking-tight strong-text mb-4">
+                    Terms of Service
+                </h1>
+                <p class="body-text text-base">
+                    Please read these terms carefully before using LifeMirror. By downloading or using the app, you agree to be bound by these terms.
+                </p>
+                <p class="mt-4 text-sm font-medium" style="color: rgb(var(--accent-rgb));">Last Updated: August 24, 2026</p>
+            </div>
+
+            <!-- Content Grid: TOC + Article -->
+            <div class="flex gap-10 items-start">
+
+                <!-- Sticky TOC Sidebar -->
+                <aside class="toc-sidebar w-56 flex-shrink-0 sticky top-28">
+                    <div class="glass-card p-4">
+                        <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: rgb(var(--accent-rgb));">On this page</p>
+                        <nav id="toc" class="flex flex-col gap-1">
+                            <a class="toc-link" href="#acceptance">1. Acceptance</a>
+                            <a class="toc-link" href="#eligibility">2. Eligibility</a>
+                            <a class="toc-link" href="#description">3. App Description</a>
+                            <a class="toc-link" href="#accounts">4. Accounts</a>
+                            <a class="toc-link" href="#plans">5. Subscription Plans</a>
+                            <a class="toc-link" href="#billing">6. Billing &amp; Payments</a>
+                            <a class="toc-link" href="#beta">7. Beta Features</a>
+                            <a class="toc-link" href="#permissions">8. Device Permissions</a>
+                            <a class="toc-link" href="#ai">9. AI-Generated Content</a>
+                            <a class="toc-link" href="#conduct">10. User Conduct</a>
+                            <a class="toc-link" href="#ip">11. Intellectual Property</a>
+                            <a class="toc-link" href="#disclaimer">12. Disclaimer</a>
+                            <a class="toc-link" href="#limitation">13. Limitation of Liability</a>
+                            <a class="toc-link" href="#termination">14. Termination</a>
+                            <a class="toc-link" href="#changes">15. Changes to Terms</a>
+                            <a class="toc-link" href="#governing">16. Governing Law</a>
+                            <a class="toc-link" href="#contact">17. Contact</a>
+                        </nav>
+                    </div>
+                </aside>
+
+                <!-- Main Article -->
+                <article class="flex-1 min-w-0">
+                    <div class="glass-card p-8 md:p-12 space-y-12">
+
+                        <!-- 1. Acceptance -->
+                        <section id="acceptance">
+                            <h2 class="section-heading">1. Acceptance of Terms</h2>
+                            <p class="body-text">
+                                These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "you") and <strong class="strong-text">PieApps</strong> ("we", "us", "our"), the developer of the <strong class="strong-text">LifeMirror</strong> mobile application ("App"). By downloading, installing, accessing, or using the App, you confirm that you have read, understood, and agree to be bound by these Terms and our <a href="privacy.html" class="underline" style="color:rgb(var(--accent-rgb))">Privacy Policy</a>, which is incorporated by reference.
+                            </p>
+                            <p class="body-text mt-3">
+                                If you do not agree with any part of these Terms, you must not use the App.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 2. Eligibility -->
+                        <section id="eligibility">
+                            <h2 class="section-heading">2. Eligibility</h2>
+                            <p class="body-text">
+                                You must be at least <strong class="strong-text">13 years of age</strong> to use LifeMirror. By using the App, you represent and warrant that you meet this requirement. If you are between 13 and 18 years old, you represent that a parent or legal guardian has reviewed and consents to these Terms on your behalf.
+                            </p>
+                            <p class="body-text mt-3">
+                                LifeMirror does not knowingly collect or solicit personal information from children under 13. If we learn that we have collected data from a child under 13, we will delete it promptly. If you become aware of such a case, please contact us at <a href="mailto:vrpieapps@gmail.com" class="underline" style="color:rgb(var(--accent-rgb))">vrpieapps@gmail.com</a>.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 3. App Description -->
+                        <section id="description">
+                            <h2 class="section-heading">3. Description of the App</h2>
+                            <p class="body-text">
+                                LifeMirror is a local-first, AI-assisted behavior and time-tracking application for Android. It helps users understand their habits, routines, and focus cycles through:
+                            </p>
+                            <ul class="prose-list mt-4">
+                                <li>Manual and automated activity session tracking</li>
+                                <li>Pattern recognition and behavioral analytics</li>
+                                <li>AI-generated weekly reflections and life stories</li>
+                                <li>Customizable life modes, subtags, and daily intentions</li>
+                                <li>Optional cloud sync and cross-device backup for signed-in users</li>
+                            </ul>
+                            <p class="body-text mt-4">
+                                LifeMirror is currently in <strong class="strong-text">Beta for Android</strong> and is distributed exclusively through the Google Play Store. The App's features, functionality, and availability are subject to change at any time without prior notice.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 4. Accounts -->
+                        <section id="accounts">
+                            <h2 class="section-heading">4. User Accounts</h2>
+                            <p class="body-text">
+                                You may use LifeMirror as a <strong class="strong-text">Guest</strong> with limited functionality. To access the Free or Pro tier, you must create an account using Firebase Authentication.
+                            </p>
+                            <ul class="prose-list mt-4">
+                                <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+                                <li>You agree to provide accurate, current, and complete information during registration.</li>
+                                <li>You are responsible for all activities that occur under your account.</li>
+                                <li>You must notify us immediately of any unauthorized use of your account at <a href="mailto:vrpieapps@gmail.com" class="underline" style="color:rgb(var(--accent-rgb))">vrpieapps@gmail.com</a>.</li>
+                                <li>We reserve the right to suspend or terminate accounts that violate these Terms.</li>
+                            </ul>
+                            <p class="body-text mt-4">
+                                You may delete your account at any time via <strong class="strong-text">Settings &rarr; Account &rarr; Delete Account</strong> in the App. All associated cloud data will be permanently removed within 30 days.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 5. Plans & Pricing -->
+                        <section id="plans">
+                            <h2 class="section-heading">5. Subscription Plans</h2>
+                            <p class="body-text">
+                                LifeMirror offers a <strong class="strong-text">Free</strong> tier and a <strong class="strong-text">Pro</strong> (lifetime) tier. A third tier (AI+) is in development and is not currently available for purchase.
+                            </p>
+                            <p class="body-text mt-3">
+                                Each tier unlocks a different level of features and usage limits within the App. The specific features available per tier are described within the App itself and are subject to change.
+                            </p>
+                            <p class="body-text mt-3">
+                                <strong class="strong-text">Pricing</strong> for the Pro tier is determined by Google Play and may vary by country, region, and currency. The current price applicable to your location is displayed at the time of purchase on the Google Play Store. PieApps does not set or control regional pricing displayed by Google Play.
+                            </p>
+                            <p class="body-text mt-4 text-sm">
+                                Feature availability is enforced server-side. We reserve the right to adjust the features assigned to each tier at any time with reasonable notice. Existing Pro purchasers will be notified of material changes that reduce core functionality.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 6. Billing -->
+                        <section id="billing">
+                            <h2 class="section-heading">6. Billing &amp; Payments</h2>
+
+                            <h3 class="text-base font-semibold strong-text mb-2 mt-4">6.1 Pro — Lifetime Purchase</h3>
+                            <p class="body-text">
+                                The Pro tier is offered as a <strong class="strong-text">one-time, lifetime in-app purchase</strong> through Google Play Billing. Once purchased, your Pro entitlement is linked to your Google Play account and remains active for the lifetime of the App, subject to the conditions in these Terms.
+                            </p>
+
+                            <h3 class="text-base font-semibold strong-text mb-2 mt-6">6.2 Payment Processing</h3>
+                            <p class="body-text">
+                                All payments are processed and managed by <strong class="strong-text">Google Play</strong>. By making a purchase, you agree to Google Play's purchase terms and conditions. PieApps does not directly handle, store, or process payment card information.
+                            </p>
+
+                            <h3 class="text-base font-semibold strong-text mb-2 mt-6">6.3 No Refunds</h3>
+                            <p class="body-text">
+                                All sales of the Pro lifetime purchase are <strong class="strong-text">final and non-refundable</strong>, except where required by applicable law. Because LifeMirror's Pro purchase provides immediate access to premium features, we do not offer refunds once the purchase has been completed and the entitlement has been granted.
+                            </p>
+                            <div class="disclaimer-box mt-4">
+                                <p class="text-sm" style="color: #fb923c;">
+                                    <strong>Note:</strong> Google Play may allow refunds within a short window after purchase (typically 48 hours) through their own systems. This falls under Google's policies and is separate from PieApps' policy. For Google-initiated refunds, contact Google Play support directly.
+                                </p>
+                            </div>
+
+                            <h3 class="text-base font-semibold strong-text mb-2 mt-6">6.4 Future Tiers</h3>
+                            <p class="body-text">
+                                New premium tiers (such as AI+) may be introduced in the future. Features introduced under a new tier are not automatically included in the existing Pro lifetime purchase. PieApps will communicate clearly which features are exclusive to future tiers.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 7. Beta Features -->
+                        <section id="beta">
+                            <h2 class="section-heading">7. Beta Features Disclaimer</h2>
+                            <p class="body-text">
+                                Certain features of LifeMirror are currently in <span class="badge-beta">Beta</span>. These features are released early to gather real-world feedback and may be incomplete, unstable, or subject to significant changes.
+                            </p>
+                            <p class="body-text mt-4">The following features are currently in Beta status:</p>
+
+                            <div class="grid md:grid-cols-3 gap-4 mt-5">
+                                <div class="glass-card p-5" style="border-color: rgba(249,115,22,.25);">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
+                                        <span class="text-sm font-bold" style="color: #fb923c;">App Auto-Tracking</span>
+                                    </div>
+                                    <p class="text-xs body-text">Automatic session detection via PACKAGE_USAGE_STATS. May miss app switches, misidentify active sessions, or behave differently across Android versions and OEM skins.</p>
+                                </div>
+                                <div class="glass-card p-5" style="border-color: rgba(249,115,22,.25);">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                        <span class="text-sm font-bold" style="color: #fb923c;">Activity Recognition</span>
+                                    </div>
+                                    <p class="text-xs body-text">Physical activity detection using device sensors. May produce false positives, false negatives, or delayed state changes depending on device hardware.</p>
+                                </div>
+                                <div class="glass-card p-5" style="border-color: rgba(249,115,22,.25);">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636 6.364l.707-.707M12 21v-1M7.05 7.05L6.343 6.343M17.657 6.343l-.707.707"/></svg>
+                                        <span class="text-sm font-bold" style="color: #fb923c;">AI Weekly Reflections</span>
+                                    </div>
+                                    <p class="text-xs body-text">AI-generated narratives synthesizing your weekly behavior. Content may be incomplete, inaccurate, or not fully relevant to your situation.</p>
+                                </div>
+                            </div>
+
+                            <div class="disclaimer-box mt-6">
+                                <p class="text-sm" style="color: #fb923c;">
+                                    <strong class="strong-text">Important:</strong> Beta features are provided <em>"as-is"</em> without any warranty. PieApps is not liable for inaccuracies, data loss, or unexpected behavior caused by Beta features. Beta features may be modified, restricted, or removed at any time. Access to Beta features is a benefit, not a guaranteed entitlement, even for Pro users.
+                                </p>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 8. Device Permissions -->
+                        <section id="permissions">
+                            <h2 class="section-heading">8. Device Permissions</h2>
+                            <p class="body-text">
+                                To enable certain features, LifeMirror requests the following Android permissions. All permissions are optional and can be revoked at any time in your device settings.
+                            </p>
+                            <ul class="prose-list mt-4">
+                                <li><strong>PACKAGE_USAGE_STATS (Usage Access):</strong> Required for App Auto-Tracking. Detects which app is active on screen to automate session timers. Processed locally &mdash; not transmitted to servers except as part of aggregated session summaries when cloud backup is enabled.</li>
+                                <li><strong>ACTIVITY_RECOGNITION:</strong> Detects physical activities (walking, running, still) to trigger context-aware modes. Processed locally on your device.</li>
+                                <li><strong>READ_PHONE_STATE:</strong> Detects call start/end to automatically log call duration. LifeMirror does not access, record, or transmit phone numbers, call logs, or conversation content.</li>
+                                <li><strong>FOREGROUND_SERVICE &amp; NOTIFICATION:</strong> Required to keep tracking sessions running when the app is in the background and to deliver timely reminders.</li>
+                            </ul>
+                            <p class="body-text mt-4">
+                                Revoking any permission will disable the corresponding feature. The App's core manual tracking functionality remains available without any special permissions.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 9. AI Content -->
+                        <section id="ai">
+                            <h2 class="section-heading">9. AI-Generated Content</h2>
+                            <p class="body-text">
+                                LifeMirror uses Google's Gemini API to generate AI insights, reflections, stories, and responses. By using AI features, you acknowledge and agree that:
+                            </p>
+                            <ul class="prose-list mt-4">
+                                <li>AI-generated content is produced by a language model and <strong>may contain errors, inaccuracies, or omissions</strong>. It does not constitute professional advice &mdash; medical, psychological, financial, or otherwise.</li>
+                                <li>The AI has no persistent memory between sessions. Each generation is based on the session data and context you provide at that time.</li>
+                                <li>You should not rely on AI-generated insights as the sole basis for important personal decisions.</li>
+                                <li>We may use anonymized, aggregated interaction data to improve AI features, consistent with our <a href="privacy.html" class="underline" style="color:rgb(var(--accent-rgb))">Privacy Policy</a>.</li>
+                                <li>AI feature limits (daily AI calls, weekly insights) are enforced per account and reset on a rolling basis. Unused credits do not carry over.</li>
+                            </ul>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 10. User Conduct -->
+                        <section id="conduct">
+                            <h2 class="section-heading">10. Acceptable Use</h2>
+                            <p class="body-text">By using LifeMirror, you agree not to:</p>
+                            <ul class="prose-list mt-4">
+                                <li>Use the App for any unlawful purpose or in violation of any applicable regulations.</li>
+                                <li>Attempt to reverse-engineer, decompile, or extract the App's source code.</li>
+                                <li>Circumvent, disable, or interfere with any security feature, subscription gate, or capability check.</li>
+                                <li>Use automated scripts, bots, or tools to interact with the App's APIs or services.</li>
+                                <li>Share, sell, or transfer your Pro entitlement to another person or account.</li>
+                                <li>Use the App to collect data on other individuals without their consent.</li>
+                                <li>Attempt to manipulate or abuse AI call limits or other usage quotas.</li>
+                            </ul>
+                            <p class="body-text mt-4">
+                                Violation of this section may result in immediate suspension or termination of your account without refund.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 11. IP -->
+                        <section id="ip">
+                            <h2 class="section-heading">11. Intellectual Property</h2>
+                            <p class="body-text">
+                                All content, design, code, trademarks, logos, and materials within the LifeMirror App and website are the exclusive property of <strong class="strong-text">PieApps</strong> and are protected by applicable intellectual property laws. Nothing in these Terms grants you any right, title, or interest in PieApps' intellectual property.
+                            </p>
+                            <p class="body-text mt-3">
+                                <strong class="strong-text">Your Data:</strong> You retain full ownership of all tracking data, sessions, modes, and personal content you create within the App. By using cloud sync features, you grant PieApps a limited, non-exclusive license to store, process, and transmit your data solely for the purpose of providing the App's services to you.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 12. Disclaimer -->
+                        <section id="disclaimer">
+                            <h2 class="section-heading">12. Disclaimer of Warranties</h2>
+                            <p class="body-text">
+                                LifeMirror is provided on an <strong class="strong-text">"AS IS" and "AS AVAILABLE"</strong> basis, without any warranties of any kind, either express or implied. PieApps expressly disclaims all warranties, including but not limited to:
+                            </p>
+                            <ul class="prose-list mt-4">
+                                <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
+                                <li>That the App will be uninterrupted, error-free, or free of viruses or harmful components.</li>
+                                <li>That any defects in the App will be corrected.</li>
+                                <li>The accuracy, completeness, or usefulness of any AI-generated content.</li>
+                                <li>That Beta features will perform as described or remain available.</li>
+                            </ul>
+                            <p class="body-text mt-4">
+                                LifeMirror is a personal productivity and self-reflection tool. It is <strong class="strong-text">not a medical device</strong>, mental health tool, or certified therapeutic product. Do not use it as a substitute for professional medical, psychological, or clinical advice.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 13. Limitation of Liability -->
+                        <section id="limitation">
+                            <h2 class="section-heading">13. Limitation of Liability</h2>
+                            <p class="body-text">
+                                To the fullest extent permitted by applicable law, PieApps and its affiliates, officers, employees, agents, partners, and licensors shall not be liable for any indirect, incidental, special, consequential, punitive, or exemplary damages, including but not limited to:
+                            </p>
+                            <ul class="prose-list mt-4">
+                                <li>Loss of data, profits, revenue, or goodwill</li>
+                                <li>Business interruption</li>
+                                <li>Loss of tracking history or cloud-synced data</li>
+                                <li>Inaccurate behavioral insights or AI-generated content</li>
+                                <li>Any damages arising from the use or inability to use Beta features</li>
+                            </ul>
+                            <p class="body-text mt-4">
+                                PieApps' total cumulative liability to you for any claim arising from or related to these Terms or your use of the App shall not exceed the amount you have paid to PieApps in the twelve (12) months preceding the claim (or, if you have not made any payments, zero).
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 14. Termination -->
+                        <section id="termination">
+                            <h2 class="section-heading">14. Termination</h2>
+                            <p class="body-text">
+                                We may suspend or terminate your access to LifeMirror at our sole discretion, without prior notice, for conduct that we believe violates these Terms, is harmful to other users or third parties, or is fraudulent or abusive.
+                            </p>
+                            <p class="body-text mt-4">
+                                You may terminate your account at any time through the App. Upon termination, your right to use the App ceases immediately. Pro lifetime entitlements are not refundable upon voluntary or involuntary termination due to Terms violations.
+                            </p>
+                            <p class="body-text mt-3">
+                                We reserve the right to discontinue the App or any feature at any time. If we discontinue the App entirely, we will provide reasonable advance notice where practicable.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 15. Changes -->
+                        <section id="changes">
+                            <h2 class="section-heading">15. Changes to These Terms</h2>
+                            <p class="body-text">
+                                We may update these Terms from time to time to reflect changes in our practices, features, legal requirements, or for other legitimate business reasons. When we make material changes, we will update the "Last Updated" date at the top of this page and provide an in-app notification where reasonably practicable.
+                            </p>
+                            <p class="body-text mt-4">
+                                Your continued use of LifeMirror after any changes to these Terms constitutes your acceptance of the revised Terms. We encourage you to review this page periodically.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 16. Governing Law -->
+                        <section id="governing">
+                            <h2 class="section-heading">16. Governing Law &amp; Dispute Resolution</h2>
+                            <p class="body-text">
+                                These Terms shall be governed by and construed in accordance with the laws applicable to international software distribution. As LifeMirror is distributed globally through the Google Play Store, PieApps complies with applicable local consumer protection laws in the jurisdictions where the App is available.
+                            </p>
+                            <p class="body-text mt-3">
+                                In the event of any dispute arising from these Terms or your use of the App, we encourage you to first contact us at <a href="mailto:vrpieapps@gmail.com" class="underline" style="color:rgb(var(--accent-rgb))">vrpieapps@gmail.com</a> to seek an informal resolution. Nothing in this section limits your statutory rights as a consumer under the laws of your country of residence.
+                            </p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- 17. Contact -->
+                        <section id="contact">
+                            <h2 class="section-heading">17. Contact Us</h2>
+                            <p class="body-text mb-5">
+                                If you have any questions, concerns, or feedback about these Terms of Service, please reach out:
+                            </p>
+                            <div class="glass-card p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center" style="border-color: rgba(var(--accent-rgb),.2); background: rgba(var(--accent-rgb),.05);">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style="background: rgba(var(--accent-rgb),.15);">
+                                    <svg class="w-5 h-5" style="color: rgb(var(--accent-rgb));" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold strong-text mb-1">PieApps &mdash; Legal &amp; Support</p>
+                                    <a href="mailto:vrpieapps@gmail.com" class="text-sm font-medium underline" style="color: rgb(var(--accent-rgb));">vrpieapps@gmail.com</a>
+                                    <p class="text-xs body-text mt-1">We aim to respond to all inquiries within 3&ndash;5 business days.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div><!-- /glass-card -->
+                </article>
+
+            </div><!-- /flex grid -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t pt-16 pb-8" style="border-color: var(--border-card); background: var(--bg-page);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="index.html" class="font-display font-bold text-2xl tracking-tight flex items-center gap-2 mb-4">
+                        <img src="images/logo.png" alt="LifeMirror Logo" class="h-8 w-8">
+                        <span class="strong-text">LifeMirror</span>
+                    </a>
+                    <p class="body-text max-w-sm mb-6">A deeply thoughtful product for understanding yourself. Developed with intention by PieApps.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer"
+                       class="glass-card inline-flex rounded-xl px-4 py-2 items-center gap-3 hover:opacity-80 transition-opacity">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414C17.523 15.3414 16.0336 18.0664 13.9165 20.3551C12.9818 21.3653 11.0185 21.3653 10.0838 20.3551C7.9667 18.0664 6.47728 15.3414 6.47728 15.3414C4.85191 12.3394 5.37894 8.52989 7.8427 6.06613C10.1343 3.77457 13.866 3.77457 16.1576 6.06613C18.6213 8.52989 19.1484 12.3394 17.523 15.3414Z" opacity=".5"/><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"/></svg>
+                        <div>
+                            <div class="text-[10px] body-text uppercase tracking-wide">Available on</div>
+                            <div class="text-sm font-semibold strong-text">Google Play</div>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <h4 class="font-bold strong-text mb-4">Product</h4>
+                    <ul class="space-y-3 text-sm body-text">
+                        <li><a href="index.html#features" class="hover:text-violet-400 transition-colors">Features</a></li>
+                        <li><a href="index.html#how-it-works" class="hover:text-violet-400 transition-colors">How it Works</a></li>
+                        <li><a href="index.html#demo" class="hover:text-violet-400 transition-colors">Interactive Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold strong-text mb-4">Legal</h4>
+                    <ul class="space-y-3 text-sm body-text">
+                        <li><a href="privacy.html" class="hover:text-violet-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-violet-400 transition-colors" style="color: rgb(var(--accent-rgb));">Terms of Service</a></li>
+                        <li><a href="mailto:vrpieapps@gmail.com" class="hover:text-violet-400 transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t pt-8 flex flex-col md:flex-row justify-between items-center text-xs body-text" style="border-color: var(--border-card);">
+                <p>&copy; 2026 PieApps. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Theme Toggle ──
+        const html = document.documentElement;
+        const btn = document.getElementById('theme-toggle');
+        const iconMoon = document.getElementById('icon-moon');
+        const iconSun = document.getElementById('icon-sun');
+
+        const saved = localStorage.getItem('lm-theme');
+        if (saved === 'light') applyLight();
+
+        btn.addEventListener('click', () => {
+            if (html.classList.contains('light')) {
+                html.classList.remove('light');
+                localStorage.setItem('lm-theme', 'dark');
+                iconMoon.classList.remove('hidden');
+                iconSun.classList.add('hidden');
+            } else {
+                applyLight();
+            }
+        });
+
+        function applyLight() {
+            html.classList.add('light');
+            localStorage.setItem('lm-theme', 'light');
+            iconMoon.classList.add('hidden');
+            iconSun.classList.remove('hidden');
+        }
+
+        // ── Active TOC highlight on scroll ──
+        const sections = document.querySelectorAll('article section[id]');
+        const tocLinks = document.querySelectorAll('#toc .toc-link');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tocLinks.forEach(l => l.classList.remove('active'));
+                    const active = document.querySelector('#toc a[href="#' + entry.target.id + '"]');
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+
+        // ── Smooth scroll ──
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
