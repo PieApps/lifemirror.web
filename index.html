@@ -31,7 +31,7 @@
                 <a href="#automation" class="hover:text-white transition-colors">Automation</a>
                 <a href="#features" class="hover:text-white transition-colors">Insights</a>
                 <a href="#demo" class="hover:text-white transition-colors">Experience</a>
-                <a href="#desktop" class="hover:text-white transition-colors">Desktop Companion</a>
+
             </div>
             <div class="flex items-center gap-4">
                 <a href="https://play.google.com/store/apps/details?id=com.pieapps.lifemirror" target="_blank" rel="noopener noreferrer" class="glass-panel px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/10 transition-colors">Start Reflecting</a>
@@ -537,153 +537,6 @@
         </div>
     </section>
 
-    <!-- Desktop Companion Section -->
-    <section id="desktop" class="py-24 border-t border-white/5 relative bg-gradient-to-b from-background to-black/40 overflow-hidden">
-        <!-- Backdrop Ambient Glows -->
-        <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-blue-500/10 blur-[100px] pointer-events-none -z-10 mix-blend-screen"></div>
-        <div class="absolute bottom-0 left-10 w-[300px] h-[300px] rounded-full bg-accent/5 blur-[120px] pointer-events-none -z-10 mix-blend-screen"></div>
-
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-16 items-center">
-                <!-- Left: Info -->
-                <div class="lg:col-span-7 gs-reveal text-left">
-                    <span class="text-accent font-semibold tracking-wider uppercase text-sm mb-3 block">Future Plan</span>
-                    <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">Lightweight Desktop Automation Companion</h2>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-8">
-                        The upcoming LifeMirror Desktop Companion is designed for the modern builder. Operating as a lightweight background app built with <strong>Tauri (Rust)</strong>, it automatically brings your desktop workflows into your reflection model with zero performance footprint.
-                    </p>
-
-                    <!-- Features bullets -->
-                    <div class="space-y-6">
-                        <div class="flex gap-4 items-start">
-                            <div class="w-10 h-10 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center shrink-0 text-lg">
-                                🦀
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1">Native Process Detection (Tauri + Rust)</h4>
-                                <p class="text-sm text-slate-400">Uses the <code>active-win-pos-rs</code> crate to natively inspect active window processes, window titles, and detect keyboard/mouse idle states with near-zero resource consumption.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4 items-start">
-                            <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center shrink-0 text-lg">
-                                🛡️
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1">Decentralized Local Context & Semantic Sync</h4>
-                                <p class="text-sm text-slate-400">Your privacy is absolute. Raw window titles and applications are processed strictly in memory by a local Context Engine. Only high-level semantic sessions (e.g. <em>"Coding"</em> or <em>"Writing"</em>) are backed up to Firestore.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4 items-start">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center shrink-0 text-lg">
-                                📡
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1">mDNS Local Discovery & Offline Support</h4>
-                                <p class="text-sm text-slate-400">Keep syncing when the internet goes down. Using multicast DNS, the desktop agent automatically pairs with your mobile app on local Wi-Fi to sync timeline records peer-to-peer.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4 items-start">
-                            <div class="w-10 h-10 rounded-xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center shrink-0 text-lg">
-                                ⚡
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1">Hysteresis (Grace Periods) Engine</h4>
-                                <p class="text-sm text-slate-400">Prevents state chatter. It uses priority hierarchies (e.g., <code>manual</code> overrides background sensors) and transition grace periods so short distractions don't fracture your focus blocks.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Mockup -->
-                <div class="lg:col-span-5 flex justify-center items-center gs-reveal w-full">
-                    <div class="relative w-full max-w-[420px] mx-auto desktop-mockup flex flex-col gap-6 z-10">
-                        <!-- Simulated Desktop Screen snippet -->
-                        <div class="glass-panel p-6 rounded-3xl border border-white/10 bg-[#050508]/80 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden backdrop-blur-md">
-                            <!-- Ambient Glow -->
-                            <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-accent/20 blur-[50px] pointer-events-none"></div>
-                            
-                            <!-- Mockup Window Header -->
-                            <div class="flex items-center justify-between border-b border-white/5 pb-4 mb-4">
-                                <div class="flex items-center gap-2">
-                                    <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                                    <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-                                    <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-                                </div>
-                                <div class="text-[11px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                                    Tauri Desktop Agent v0.1.0
-                                </div>
-                            </div>
-
-                            <!-- Tray Application View -->
-                            <div class="flex flex-col gap-4">
-                                <!-- Active Window State -->
-                                <div class="flex justify-between items-center bg-white/5 p-4 rounded-2xl border border-white/10">
-                                    <div>
-                                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Active Process</div>
-                                        <div class="text-sm font-semibold text-white">Visual Studio Code</div>
-                                        <div class="text-xs text-slate-400 font-mono truncate max-w-[200px]">index.html — lifemirror</div>
-                                    </div>
-                                    <div class="px-3 py-1.5 rounded-full bg-accent/20 border border-accent/30 text-accent-light text-[10px] font-bold uppercase tracking-wider">
-                                        Coding
-                                    </div>
-                                </div>
-
-                                <!-- Signal Strengths -->
-                                <div class="grid grid-cols-2 gap-3 text-xs">
-                                    <div class="bg-white/2 p-3 rounded-xl border border-white/5 text-left">
-                                        <div class="text-slate-500 mb-1">Keyboard Input</div>
-                                        <div class="font-semibold text-slate-200">Active (45 WPM)</div>
-                                    </div>
-                                    <div class="bg-white/2 p-3 rounded-xl border border-white/5 text-left">
-                                        <div class="text-slate-500 mb-1">Mouse Movement</div>
-                                        <div class="font-semibold text-slate-200">Active</div>
-                                    </div>
-                                </div>
-
-                                <!-- Decentralized Local Sync Flow Card -->
-                                <div class="bg-[#10b981]/5 p-4 rounded-2xl border border-[#10b981]/20 mt-2 text-left">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <div class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1">
-                                            <span>🔒</span> Privacy Safeguard
-                                        </div>
-                                        <span class="text-[9px] text-emerald-500 font-mono">Semantic Sync</span>
-                                    </div>
-                                    <p class="text-xs text-slate-300 leading-relaxed">
-                                        Raw window titles are processed locally. Only the resolved <strong class="text-emerald-400">"Deep Work Session"</strong> is synced.
-                                    </p>
-                                    <!-- Merging visual -->
-                                    <div class="flex items-center justify-between mt-3 pt-3 border-t border-white/5 text-[10px]">
-                                        <div class="text-slate-400 font-medium">Desktop Companion</div>
-                                        <div class="text-emerald-400 font-bold font-mono">──[Session]──&gt;</div>
-                                        <div class="text-slate-400 font-medium">Cloud Db</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Hysteresis Delay visual -->
-                        <div class="glass-panel p-5 rounded-2xl border border-orange-500/20 bg-orange-500/5 shadow-lg transform translate-x-4 text-left">
-                            <div class="flex items-center justify-between mb-2">
-                                <div class="flex items-center gap-2">
-                                    <span class="text-orange-400">⏱️</span>
-                                    <span class="text-xs font-semibold text-orange-400 uppercase tracking-wider">Hysteresis Engine</span>
-                                </div>
-                                <span class="text-[9px] bg-orange-500/20 text-orange-300 px-2 py-0.5 rounded-full font-mono">2m Grace Period</span>
-                            </div>
-                            <p class="text-slate-300 text-xs leading-snug">
-                                Switched to Slack for 15 seconds? The Context Engine filters it out, preserving session continuity on your timeline.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Trust & Privacy -->
     <section class="py-24 relative overflow-hidden border-t border-white/5">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-accent/5"></div>
@@ -834,15 +687,7 @@
                 ease: "sine.inOut"
             });
 
-            // Desktop Mockup Floating Animation
-            gsap.to(".desktop-mockup > div", {
-                y: -8,
-                duration: 3,
-                stagger: 0.3,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut"
-            });
+
         });
     </script>
     <!-- Video Lightbox Modal -->
